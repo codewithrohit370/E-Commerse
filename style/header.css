@@ -1,0 +1,248 @@
+header {
+    box-shadow: 2px 0px 15px rgb(189, 189, 189);
+   width: 100%;
+    padding: 16px 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first-section {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.first-section:first-child {
+    color: black;
+    font-size: 24px;
+}
+
+.first-section span {
+    color: #F6A61F;
+}
+
+.first-section p:last-child {
+    font-size: 14px;
+    padding: 10px 14px;
+    color: #5a5a5a;
+    font-weight: bold;
+}
+
+.first-section p:last-child:hover {
+    background-color: rgb(245, 245, 245);
+    border-radius: 20px;
+}
+
+.second-section {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 999px;
+}
+
+.search-icon {
+    font-size: 14px;
+    color: #9ca3af;
+    margin-right: 10px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    width: 100%;
+    max-width: 400px;
+    background: transparent;
+    font-size: 14px;
+    padding: 12px;
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+.third-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cart {
+    position: relative;
+}
+
+.third-section .search-icon {
+    display: none;
+}
+
+.bar-icon{
+    font-size: 20px;
+    padding: 8px;
+    display: none;
+}
+
+.cart-icon {
+    font-size: 20px;
+    padding: 8px;
+}
+
+.add-quantity {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    font-size: 12px;
+    background-color: #F6A61F;
+    color: white;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.cart-icon:hover {
+    background-color: rgb(236, 236, 236);
+    border-radius: 50%;
+}
+
+.Btns {
+    display: flex;
+    gap: 10px;
+}
+
+.Btns button:first-child {
+    background: transparent;
+    font-size: 14px;
+    border: none;
+    padding: 7px 14px;
+    color: #5a5a5a;
+    font-weight: bolder;
+}
+
+.Btns button:first-child:hover {
+    background-color: #ffa2002a;
+    color: #7c4f00;
+
+    border-radius: 20px;
+}
+
+.Btns button:last-child {
+    background-color: #F5A723;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: none;
+}
+
+/* When i CLick Search  */
+.second-section-1 {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    margin-top: 14px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 999px;
+}
+
+.search-icon {
+    font-size: 14px;
+    color: #9ca3af;
+    margin-right: 10px;
+}
+
+.search-input-1 {
+    flex: 1;
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    font-size: 14px;
+    padding: 12px;
+}
+/* When i click bars */
+
+.btn-js{
+    margin-top: 14px;
+}
+.btn-js p{
+    font-size: 14px;
+    color: #5a5a5a;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.Btns-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.Btns-1 button:first-child {
+    background: transparent;
+    font-size: 14px;
+    height: 40px;
+    width: 100%; 
+    color: #5a5a5a;
+    border: 1px solid rgb(189, 189, 189);
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+.Btns-1 button:last-child {
+    background-color: #F5A723;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+}
+
+@media (max-width:1000px) {
+    header{
+        padding: 16px 70px;
+    }
+    
+
+    .third-section .search-icon {
+        display: block;
+    }
+
+    .second-section {
+        display: none;
+    }
+    .bar{
+        display: none;
+    }
+}
+
+
+@media (max-width:760px) {
+    header{
+        padding: 16px 40px;
+    }
+    .first-section p:last-child {
+        display: none;
+    }
+}
+
+@media (max-width:640px){
+    header{
+        padding: 16px 24px;
+    }
+    .Btns{
+        display: none;
+    }
+    .third-section{
+        gap:10px;
+    }
+    .bar-icon{
+        display: block;
+    }
+}
+
+
