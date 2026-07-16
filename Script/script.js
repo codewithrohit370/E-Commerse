@@ -165,12 +165,13 @@ products.forEach((product, index) => {
             <div class="product-info">
                 <p>${product.name}</p>
                 <p>Rs.${product.priceCents}</p>
-                <button class="Add-btn">Add to Cart</button>
+                <button class="Add-btn" data-product-id="${product.id}">Add to Cart</button>
             </div>
         </div>`
     document.querySelector(".product-section").innerHTML = Html;
 })
 
+// Hover Effect in Product
 let hoverHtml = '';
 const hoverProduct = document.querySelectorAll(".product");
 hoverProduct.forEach((hover) => {
@@ -178,23 +179,23 @@ hoverProduct.forEach((hover) => {
     const img = hoverImage.querySelector("img");
     hoverImage.addEventListener("mouseenter", () => {
         hoverHtml = `<div class="hover-effect">
-                        <button class="view-btn"><i class="fa-regular fa-eye"></i> Quick View</button>
-                        <i class="fa-regular fa-heart heart-icon"></i>
-                    </div>`
+        <button class="view-btn"><i class="fa-regular fa-eye"></i> Quick View</button>
+        <i class="fa-regular fa-heart heart-icon"></i>
+        </div>`
         hoverImage.insertAdjacentHTML("beforeend", hoverHtml);
         gsap.to(img, {
             scale: 1.1,
             duration: 0.3
         });
 
-        gsap.to(hover,{
-            y:-5,
-            scale:1.02,
-            duration:0.3,
+        gsap.to(hover, {
+            y: -5,
+            scale: 1.02,
+            duration: 0.3,
         })
-        gsap.from(".hover-effect",{
-            opacity:0,
-            duration:0.3,
+        gsap.from(".hover-effect", {
+            opacity: 0,
+            duration: 0.3,
         })
 
     })
@@ -205,14 +206,92 @@ hoverProduct.forEach((hover) => {
             duration: 0.3
         });
 
-        gsap.to(hover,{
-            y:0,
-            scale:1,
-            duration:0.3,
+        gsap.to(hover, {
+            y: 0,
+            scale: 1,
+            duration: 0.3,
         })
-        gsap.to(".hover-effect",{
-            opacity:0,
-            duration:0.3,
+        gsap.to(".hover-effect", {
+            opacity: 0,
+            duration: 0.3,
         })
+    })
+})
+
+let Cart = [];
+let Totalcount = 0;
+let AddBtn = document.querySelectorAll(".Add-btn");
+let count = 1;
+
+AddBtn.forEach((Button) => {
+    Button.addEventListener("click", () => {
+        Button.style.opacity = 0.5;
+        Button.innerHTML = `<div class="loader"></div> Adding...`;
+
+        setTimeout(() => {
+            Button.style.opacity = 1;
+            Button.style.backgroundColor = "#07d600";
+            Button.innerHTML = `<i class="fa-solid fa-check"></i> &nbsp;Added to Cart`;
+
+            gsap.fromTo(Button,
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                }
+            );
+        }, 1000);
+
+        setTimeout(() => {
+            Button.style.backgroundColor = "";
+            Button.innerHTML = "Add to Cart";
+
+            gsap.fromTo(Button,
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                }
+            );
+        }, 2000);
+
+
+        let itemID = Button.dataset.productId;
+        let matchingId;
+        Cart.forEach((itme) => {
+            if (itme.ProductId === itemID) {
+                matchingId = itme
+            }
+        })
+
+        if (matchingId) {
+            count = Number(matchingId.quantity += 1);
+        } else {
+            Cart.push({
+                ProductId: itemID,
+                quantity: count,
+            })
+        }
+        count = 1
+        let Totalcount = 0
+        function addquantity() {
+            Cart.forEach((item) => {
+                Totalcount += item.quantity;
+            })
+        }
+        addquantity();
+
+        const quantityElement = document.querySelector(".add-quantity");
+
+        if (Totalcount > 0) {
+            quantityElement.style.display = "flex"; // ya block
+            quantityElement.textContent = Totalcount;
+        } else {
+            quantityElement.style.display = "none";
+        }
+
+
     })
 })

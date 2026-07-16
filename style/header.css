@@ -4,7 +4,7 @@ header {
     padding: 16px 100px;
     position: fixed;
     z-index: 100;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 nav {
@@ -97,7 +97,7 @@ nav {
 .add-quantity {
     position: absolute;
     top: -6px;
-    right: -1   px;
+    right: -1px;
     font-size: 12px;
     background-color: #F6A61F;
     color: white;
@@ -107,6 +107,7 @@ nav {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    display: none;
 }
 
 .cart-icon:hover {
