@@ -2,6 +2,9 @@ header {
     box-shadow: 2px 0px 15px rgb(189, 189, 189);
    width: 100%;
     padding: 16px 100px;
+    position: fixed;
+    z-index: 100;
+    background-color: white;
 }
 
 nav {
@@ -93,8 +96,8 @@ nav {
 
 .add-quantity {
     position: absolute;
-    top: -10px;
-    right: -5px;
+    top: -6px;
+    right: -1   px;
     font-size: 12px;
     background-color: #F6A61F;
     color: white;
@@ -204,7 +207,7 @@ nav {
 
 @media (max-width:1000px) {
     header{
-        padding: 16px 70px;
+        padding: 16px 30px;
     }
     
 

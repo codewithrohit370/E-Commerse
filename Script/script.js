@@ -61,16 +61,13 @@ let hero = [{
 }
 ]
 
-let index = 0;
-
-setInterval(() => {
-    document.querySelector(".hero-section").innerHTML = `
-    <img src="${hero[index].img}" class="hero-img">
-    <h3 class="hero-heading">${hero[index].heading}</h3>
-    <p class="hero-para">${hero[index].para}</p>
-  `;
-
+function addbanner() {
     index++;
+    if (index >= hero.length) {
+        index = 0;
+    }
+    renderBanner();
+
     gsap.from(".hero-img", {
         opacity: 0,
         x: 30,
@@ -90,10 +87,132 @@ setInterval(() => {
         duration: 0.8,
         delay: 0.4
     });
+}
 
-    if (index >= hero.length) {
-        index = 0;
+let index = 0;
+const forwardbtn = document.querySelector('.forward-btn');
+
+forwardbtn.addEventListener('click', () => {
+    addbanner();
+})
+
+const backwordBtn = document.querySelector('.backword-btn');
+backwordBtn.addEventListener('click', () => {
+    removebanner();
+})
+
+
+function removebanner() {
+    index--;
+    if (index < 0) {
+        index = 2;
     }
-}, 3000);
+    renderBanner();
+
+    gsap.from(".hero-img", {
+        opacity: 0,
+        x: -30,
+        duration: 0.8
+    });
+
+    gsap.from(".hero-heading", {
+        opacity: 0,
+        x: -30,
+        duration: 0.8,
+        delay: 0.2
+    });
+
+    gsap.from(".hero-para", {
+        opacity: 0,
+        x: -30,
+        duration: 0.8,
+        delay: 0.4
+    });
+}
+
+function renderBanner() {
+    document.querySelector(".hero-section").innerHTML = `
+    <img src="${hero[index].img}" class="hero-img">
+    <h3 class="hero-heading">${hero[index].heading}</h3>
+    <p class="hero-para">${hero[index].para}</p>
+    <div class="btns">
+            <button class="backword-btn"><</button>
+            <button class="forward-btn">></button>
+        </div>
+  `
+    const backwordBtn = document.querySelector(".backword-btn");
+
+    backwordBtn.addEventListener("click", () => {
+        removebanner();
+    })
+
+    const newBtn = document.querySelector(".forward-btn");
+
+    newBtn.addEventListener("click", () => {
+        addbanner();
+    })
+
+}
 
 
+// Create Html for add product
+let Html = '';
+products.forEach((product, index) => {
+    Html += `<div class="product">
+            <div class="product-images-box">
+                <img src="${product.image}" >
+            </div>
+            <div class="product-info">
+                <p>${product.name}</p>
+                <p>Rs.${product.priceCents}</p>
+                <button class="Add-btn">Add to Cart</button>
+            </div>
+        </div>`
+    document.querySelector(".product-section").innerHTML = Html;
+})
+
+let hoverHtml = '';
+const hoverProduct = document.querySelectorAll(".product");
+hoverProduct.forEach((hover) => {
+    let hoverImage = hover.querySelector(".product-images-box");
+    const img = hoverImage.querySelector("img");
+    hoverImage.addEventListener("mouseenter", () => {
+        hoverHtml = `<div class="hover-effect">
+                        <button class="view-btn"><i class="fa-regular fa-eye"></i> Quick View</button>
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                    </div>`
+        hoverImage.insertAdjacentHTML("beforeend", hoverHtml);
+        gsap.to(img, {
+            scale: 1.1,
+            duration: 0.3
+        });
+
+        gsap.to(hover,{
+            y:-5,
+            scale:1.02,
+            duration:0.3,
+        })
+        gsap.from(".hover-effect",{
+            opacity:0,
+            duration:0.3,
+        })
+
+    })
+    hoverImage.addEventListener("mouseleave", () => {
+        document.querySelector(".hover-effect").remove();
+        gsap.to(img, {
+            scale: 1,
+            duration: 0.3
+        });
+
+        gsap.to(hover,{
+            y:0,
+            scale:1,
+            duration:0.3,
+        })
+        gsap.to(".hover-effect",{
+            opacity:0,
+            duration:0.3,
+        })
+    })
+})

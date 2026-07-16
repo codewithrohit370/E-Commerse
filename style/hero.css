@@ -1,5 +1,5 @@
 .hero-section{
-    padding: 20px;
+    padding: 100px 20px 20px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,26 +30,64 @@
     left: 250px;
 }
 
+.btns button{
+    position: absolute;
+    padding: 20px 30px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(110, 110, 110);
+    border: none;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+}
 
-@media (max-width:600px){
+.backword-btn{
+    top: 320px;
+    left: 110px;
+}
+
+.forward-btn{
+    top: 320px;
+    right: 110px;
+}
+
+
+@media (max-width:1100px){
+    .hero-section{
+        padding-top: 100px;
+    }
 
     .hero-img{
          object-fit: cover;
-        object-position: right center;
+        object-position: bottom;
         height: 30vh;
         border-radius: 10px;
         width: 100%;
     }
     .hero-heading{
-        top: 65px;
-        font-size: 25px;
+        top: 135px;
+        font-size: 20px;
         left: 40px;
     }
     .hero-para{
-        font-size: 12px;
-        top: 103px;
-        left: 45px;
+        font-size: 10px;
+        top: 165px;
+        left: 40px;
         width: 200px;
+    }
+
+    .btns button{
+        padding: 15px 20px;
+        font-size: 10px;
+    }
+    .forward-btn{
+        top:57%;
+        right: -10px;
+    }
+    .backword-btn{
+        top: 57%;
+        left: -10px;
     }
 
 } 
