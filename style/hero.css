@@ -7,7 +7,7 @@
 }
 
 .hero-img{
-    width: 80%;
+    width: 86%;
     height: 80vh;
     border-radius: 30px;
    object-position: center calc(50% - 100px);
@@ -44,12 +44,12 @@
 
 .backword-btn{
     top: 320px;
-    left: 110px;
+    left: 76px;
 }
 
 .forward-btn{
     top: 320px;
-    right: 110px;
+    right: 76px;
 }
 
 

@@ -1,7 +1,7 @@
 header {
     box-shadow: 2px 0px 15px rgb(189, 189, 189);
-   width: 100%;
-    padding: 16px 100px;
+    width: 100%;
+    padding: 16px 60px;
     position: fixed;
     z-index: 100;
     background-color: rgba(255, 255, 255, 1);
@@ -77,6 +77,11 @@ nav {
 
 .cart {
     position: relative;
+    
+}
+
+.cart a{
+    color: black;
 }
 
 .third-section .search-icon {
@@ -206,7 +211,7 @@ nav {
     border: none;
 }
 
-@media (max-width:1000px) {
+@media (max-width:1200px) {
     header{
         padding: 16px 30px;
     }
