@@ -1,3 +1,6 @@
+import { products } from "./product.js";
+import { Cart , addquantity , displayQuantity } from "./Cart.js";
+
 const searchBtn = document.querySelector(".search-btn")
 
 let isBtn = false;
@@ -218,11 +221,11 @@ hoverProduct.forEach((hover) => {
     })
 })
 
-let Cart = [];
-let Totalcount = 0;
+
+
+displayQuantity()
 let AddBtn = document.querySelectorAll(".Add-btn");
 let count = 1;
-
 AddBtn.forEach((Button) => {
     Button.addEventListener("click", () => {
         Button.style.opacity = 0.5;
@@ -274,24 +277,10 @@ AddBtn.forEach((Button) => {
                 quantity: count,
             })
         }
+        localStorage.setItem("Cart", JSON.stringify(Cart));
         count = 1
-        let Totalcount = 0
-        function addquantity() {
-            Cart.forEach((item) => {
-                Totalcount += item.quantity;
-            })
-        }
-        addquantity();
-
-        const quantityElement = document.querySelector(".add-quantity");
-
-        if (Totalcount > 0) {
-            quantityElement.style.display = "flex"; // ya block
-            quantityElement.textContent = Totalcount;
-        } else {
-            quantityElement.style.display = "none";
-        }
-
+        
+        displayQuantity()
 
     })
 })
