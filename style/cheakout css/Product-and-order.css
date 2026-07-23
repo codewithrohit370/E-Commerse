@@ -1,0 +1,244 @@
+.Main-container{
+    padding: 20px 60px 20px 60px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 30px;
+    row-gap: 50px;
+}
+.product-container{
+    box-shadow: 1px 0px 10px rgb(189, 189, 189);
+    border-radius: 30px;
+    padding: 30px 20px;
+}
+
+.product-heading{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-heading p:nth-child(1){
+    font-size: 18px;
+    font-weight: 600;
+}
+.product-heading p:nth-child(2){
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: rgb(128, 128, 128);
+    transition: background-color 0.25s ,color 0.25s;
+}
+
+.product-heading p:nth-child(2):hover{
+    background-color: rgba(255, 255, 0, 0.26);
+    color: rgb(250, 37, 37);
+}
+
+.selected-item{
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom:1px solid rgb(219, 219, 219) ;
+}
+.img-box{
+    height: 100px;
+    width: 100px;
+}
+.img-box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+.infomation{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-decribe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.trash-icon{
+    font-size: 14px;
+    color: gray;
+}
+
+.item-infomation{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.item-infomation p:nth-child(1){
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.item-infomation p:nth-child(2){
+    font-size: 14px;
+    color: gray;
+}
+.quantity-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quantity{
+    display: flex;
+    gap: 30px;
+    font-size: 14px;
+    padding: 10px 15px;
+    border:1px solid rgb(228, 227, 227);
+    border-radius: 30px;
+}
+.price{
+    font-size: 18px;
+    font-weight: 600;
+}   
+
+
+.order-container{
+    box-shadow: 1px 0px 10px rgb(189, 189, 189);
+    border-radius: 30px;
+    padding: 30px 20px ;
+     position: sticky;
+    top: 90px;
+    height: 430px;
+}
+
+.order-heading{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+.items-info{
+    font-size: 14px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding-bottom: 18px;
+    padding-top: 20px;
+}
+
+
+.items-info p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.items-info p span{
+    color: black;
+}
+
+.items-info p:nth-child(2) span{
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-weight: 500;
+    background-color: rgba(218, 218, 218, 0.596);
+}
+
+.items-total{
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding-bottom: 18px;
+    padding-top: 20px;
+}
+
+.total-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.total-section p:nth-child(1){
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.total-section p:nth-child(2){
+    font-size: 18px;
+    font-weight: 700;
+    color: #F59E0B;
+}
+
+.proceed-btn{
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #F5A723;
+    border: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.extra-info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+    color: gray;
+    padding-top: 20px;
+}
+.extra-info p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-icon-1{
+    color: rgb(53, 255, 2);
+}
+
+.info-icon-2{
+    color: blue;
+}
+.info-icon-3{
+    color: red;
+}
+
+
+
+@media (max-width:1200px) {
+    .Main-container{
+        padding: 30px;
+    }
+
+}
+
+@media (max-width:1200px){
+    .Main-container{
+        grid-template-columns: 1fr;
+    }   
+}
+
+
+@media (max-width:760px) {
+    .Main-container{
+        padding: 40px;
+    }
+
+}
+
+@media (max-width:640px){
+    .Main-container{
+        padding: 24px;
+    }
+}

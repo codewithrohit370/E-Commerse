@@ -1,0 +1,62 @@
+.Cart-hero-section{
+    padding: 110px 60px 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.cheakout-hero p:nth-child(1){
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.cheakout-hero p:nth-child(2){
+    font-size: 16px;
+    font-weight: 400;
+    color: gray;
+    margin-top: 10px;
+}
+
+.return-section a{
+    color: gray;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 7px 20px;
+    border-radius: 70px;
+    transition: background-color 0.25s ,color 0.25s;
+}
+
+.return-section a:hover{
+    background-color: rgba(255, 255, 0, 0.25);
+    color: black;
+}
+
+
+@media (max-width:1200px) {
+    .Cart-hero-section{
+        padding: 110px 30px 0;
+    }
+
+}
+
+
+@media (max-width:760px) {
+    .Cart-hero-section{
+        padding: 110px 40px 0;
+    }
+
+}
+
+@media (max-width:640px){
+    .Cart-hero-section{
+        padding: 110px 24px 0px;
+    }
+}
+
