@@ -1,0 +1,68 @@
+.shipping-options{
+    padding: 18px 0;
+    border-bottom: 1px solid rgb(221,221,221);
+}
+
+
+
+.shipping-heading{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.shipping-option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(226,226,226);
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .25s;
+    margin-top: 20px;
+}
+
+.shipping-option:hover{
+    border-color: #F5A723;
+    background: rgba(245,167,35,.08);
+}
+
+.shipping-left{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.shipping-left input{
+    accent-color: #F5A723;
+    cursor: pointer;
+}
+
+.shipping-details{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.shipping-title{
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+.shipping-days{
+    font-size: 12px;
+    color: gray;
+}
+
+.shipping-price{
+    font-size: 14px;
+    font-weight: 600;
+    color: #F5A723;
+}
+
+.free-shipping{
+    color: rgb(6, 206, 6);
+}
