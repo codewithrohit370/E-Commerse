@@ -18,6 +18,10 @@ export function displayQuantity() {
     }
 }
 
+export function renderTotalCartItem(){
+    document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
+}
+
 export function updateCart(productId) {
     let newArr = []
     Cart.forEach((item) => {

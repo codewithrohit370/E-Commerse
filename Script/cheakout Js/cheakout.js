@@ -1,11 +1,11 @@
-import { Cart, addquantity, displayQuantity , updateCart , Clear , removeQuanity , plusQuanity} from "../Cart.js";
+import { Cart, addquantity, displayQuantity , updateCart , Clear , removeQuanity , plusQuanity , renderTotalCartItem} from "../Cart.js";
 import { products } from "../product.js";
 import { renderpayment } from "./payment.js";
 
 function renderHtml(){
 renderpayment();
 displayQuantity();
-document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`
+renderTotalCartItem();
 
 let cartItemHtml = '';
 
@@ -48,7 +48,7 @@ deleteBtn.forEach((button)=>{
         let itemID = button.dataset.productId;
        updateCart(itemID);
        renderHtml();
-       document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
+      renderTotalCartItem();
        displayQuantity()
     })
 })
@@ -57,7 +57,7 @@ let Clearbtn = document.querySelector(".Clear-btn");
 Clearbtn.addEventListener("click",()=>{
     Clear();
     renderHtml();
-    document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
+    renderTotalCartItem();
     displayQuantity()
 })
 
@@ -68,7 +68,7 @@ minusBtn.forEach((button)=>{
         removeQuanity(itemID)
         renderHtml();
         renderpayment();
-        document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
+        renderTotalCartItem();
     displayQuantity()
     })
 })
@@ -80,7 +80,7 @@ plusBtn.forEach((button)=>{
         plusQuanity(itemID)
         renderHtml();
         renderpayment();
-        document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
+        renderTotalCartItem();
         displayQuantity()
     })
 })

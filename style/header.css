@@ -7,6 +7,10 @@ header {
     background-color: rgba(255, 255, 255, 1);
 }
 
+header nav a{
+    text-decoration: none;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -33,6 +37,7 @@ nav {
     padding: 10px 14px;
     color: #5a5a5a;
     font-weight: bold;
+    transition: background-color 0.25s, border-radius 0.25s;
 }
 
 .first-section p:last-child:hover {
@@ -97,6 +102,7 @@ nav {
 .cart-icon {
     font-size: 20px;
     padding: 8px;
+    transition: background-color 0.25s, border-radius 0.25s;
 }
 
 .add-quantity {
@@ -132,12 +138,12 @@ nav {
     padding: 7px 14px;
     color: #5a5a5a;
     font-weight: bolder;
+    transition: background-color 0.5s, border-radius 0.5s , color 0.5s;
 }
 
 .Btns button:first-child:hover {
     background-color: #ffa2002a;
     color: #7c4f00;
-
     border-radius: 20px;
 }
 

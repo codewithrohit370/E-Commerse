@@ -111,6 +111,7 @@
     font-size: 14px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .minus-btn.disabled {
@@ -122,6 +123,7 @@
     font-size: 14px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 .price{
     font-size: 18px;

@@ -23,15 +23,15 @@ export function renderpayment(){
     renderpaymentHtml = `
             <p class="order-heading">Order Summary</p>
             <div class="items-info">
-                <p>Subtotal (${addquantity()} item) <span>Rs.${totalAmount}</span></p>
+                <p>Subtotal (${addquantity()} item) <span>Rs. ${totalAmount}</span></p>
                 <p>Shipping <span>Free</span></p>
-                <p>Tax <span>Rs.${taxAmount}</span></p>
+                <p>Tax <span>Rs. ${taxAmount}</span></p>
             </div>
 
             <div class="items-total">
                 <div class="total-section">
                     <p>Total</p>
-                    <p>Rs.${totalAmountAfterTax}</p>
+                    <p>Rs. ${totalAmountAfterTax}</p>
                 </div>
                 <button class="proceed-btn"><i class="fa-regular fa-folder-closed"></i>Proceed to Cheakout</button>
             </div>
