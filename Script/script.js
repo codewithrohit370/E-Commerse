@@ -1,5 +1,7 @@
 import { products } from "./product.js";
-import { Cart , addquantity , displayQuantity } from "./Cart.js";
+import { Cart, addquantity, displayQuantity } from "./Cart.js";
+gsap.registerPlugin(ScrollTrigger);
+
 
 const searchBtn = document.querySelector(".search-btn")
 
@@ -89,6 +91,19 @@ function addbanner() {
         x: 30,
         duration: 0.8,
         delay: 0.4
+    });
+
+    gsap.from(".hero-title", {
+        y: 60,
+        opacity: 0,
+        duration: 1
+    });
+
+    gsap.from(".hero-btn", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        delay: .3
     });
 }
 
@@ -281,10 +296,25 @@ AddBtn.forEach((Button) => {
                 quantity: count,
             })
         }
+      
         localStorage.setItem("Cart", JSON.stringify(Cart));
         count = 1
-        
+
         displayQuantity()
 
     })
 })
+
+gsap.utils.toArray(".product").forEach((card) => {
+    gsap.from(card, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none"
+        }
+    });
+});

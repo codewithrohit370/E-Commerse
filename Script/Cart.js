@@ -13,6 +13,12 @@ export function displayQuantity() {
     if (addquantity() > 0) {
         quantityElement.style.display = "flex";
         quantityElement.textContent = addquantity();
+        gsap.from(".add-quantity", {
+                scale: 0,
+                duration: .4,
+                ease: "back.out(3)"
+            });
+        
     } else {
         quantityElement.style.display = "none";
     }
@@ -20,6 +26,7 @@ export function displayQuantity() {
 
 export function renderTotalCartItem(){
     document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
+
 }
 
 export function updateCart(productId) {
