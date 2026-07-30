@@ -80,6 +80,10 @@ nav {
     align-items: center;
 }
 
+.third-section a{
+    color: black;
+}
+
 .cart {
     position: relative;
     

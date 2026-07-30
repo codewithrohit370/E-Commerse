@@ -226,12 +226,16 @@ hoverProduct.forEach((hover) => {
 displayQuantity()
 let AddBtn = document.querySelectorAll(".Add-btn");
 let count = 1;
+let addTimeOut;
+let resetTimeOut;
 AddBtn.forEach((Button) => {
     Button.addEventListener("click", () => {
         Button.style.opacity = 0.5;
         Button.innerHTML = `<div class="loader"></div> Adding...`;
+        clearTimeout(addTimeOut)
+        clearTimeout(resetTimeOut)
 
-        setTimeout(() => {
+        addTimeOut = setTimeout(() => {
             Button.style.opacity = 1;
             Button.style.backgroundColor = "#07d600";
             Button.innerHTML = `<i class="fa-solid fa-check"></i> &nbsp;Added to Cart`;
@@ -246,7 +250,7 @@ AddBtn.forEach((Button) => {
             );
         }, 1000);
 
-        setTimeout(() => {
+        resetTimeOut = setTimeout(() => {
             Button.style.backgroundColor = "";
             Button.innerHTML = "Add to Cart";
 

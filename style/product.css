@@ -147,10 +147,10 @@
 @media (max-width:600px){
      .product-section{
         padding: 50px 20px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .product-images-box{
-    height: 600px;
+    height: 250px;
 }
 }

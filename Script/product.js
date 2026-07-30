@@ -9,39 +9,39 @@ export const products = [
     id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
     image: "images/product-images/2.avif",
     name: "Urban Street Pro",
-    priceCents: 7000,
+    priceCents: 600,
   },
   {
     id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
     image: "images/product-images/3.avif",
     name: "Classic Court 90s",
-    priceCents: 4999,
+    priceCents: 499,
   },
   {
     id: "54e0eccd-8f36-462b-b68a-8182611d9add",
     image: "images/product-images/4.avif",
     name: "Volt Edge",
-    priceCents: 1899,
+    priceCents: 649,
     
   },
   {
     id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
     image: "images/product-images/5.avif",
     name: "Zenith Flow",
-    priceCents: 2067,
+    priceCents: 469,
   },
   {
     id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
     image: "images/product-images/6.avif",
     name: "Street Vibe Low",
-    priceCents: 3499,
+    priceCents: 399,
    
   },
   {
     id: "dd82ca78-a18b-4e2a-9250-31e67412f98d",
     image: "images/product-images/7.avif",
     name: "Nova Horizon",
-    priceCents: 2400,
+    priceCents: 999,
    
   },
   {
@@ -49,7 +49,7 @@ export const products = [
     image: "images/product-images/8.avif",
     name: "Public React",
     
-    priceCents: 3599,
+    priceCents: 899,
     
   },
   {
@@ -57,12 +57,12 @@ export const products = [
     image: "images/product-images/9.avif",
     name: "Core Street Retro",
    
-    priceCents: 2899,
+    priceCents: 299,
   },
   {
     id: "58b4fc92-e98c-42aa-8c55-b6b79996769a",
     image: "images/product-images/10.avif",
     name: "AeroFlex Lite",
-    priceCents: 3390,
+    priceCents: 1100,
   },
 ];
