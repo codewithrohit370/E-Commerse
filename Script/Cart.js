@@ -25,14 +25,12 @@ export function updateCart(productId) {
         }
     })
     Cart = newArr;
-    document.querySelector(`.id-${productId}`).remove();
     localStorage.setItem("Cart", JSON.stringify(Cart))
 }
 
 export function Clear() {
     Cart = [];
     localStorage.setItem("Cart", JSON.stringify(Cart))
-    document.querySelector(".selected-item-container").innerHTML = ``;
 }
 
 export function removeQuanity(productId) {

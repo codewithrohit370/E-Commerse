@@ -1,6 +1,7 @@
 import { Cart, addquantity, displayQuantity , updateCart , Clear , removeQuanity , plusQuanity} from "./Cart.js";
 import { products } from "./product.js";
 
+function renderHtml(){
 
 displayQuantity();
 document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`
@@ -32,20 +33,20 @@ Cart.forEach((cartItem) => {
                             <p class="Cart-id-${matchingItem.id}">${cartItem.quantity}</p>
                             <button class="plus-btn" data-product-id= "${matchingItem.id}"><i class="fa-solid fa-plus"></i></button>
                         </div>
-                        <p class="price">Rs. ${matchingItem.priceCents}</p>
+                        <p class="price">Rs. ${(matchingItem.priceCents)}</p>
                     </div>
                 </div>
             </div>
     `
-    document.querySelector(".selected-item-container").innerHTML = cartItemHtml
 })
+document.querySelector(".selected-item-container").innerHTML = cartItemHtml
 
 let deleteBtn = document.querySelectorAll('.trash-js')
 deleteBtn.forEach((button)=>{
     button.addEventListener(("click"),()=>{
         let itemID = button.dataset.productId;
        updateCart(itemID);
-       
+       renderHtml();
        document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
        displayQuantity()
     })
@@ -54,6 +55,7 @@ deleteBtn.forEach((button)=>{
 let Clearbtn = document.querySelector(".Clear-btn");
 Clearbtn.addEventListener("click",()=>{
     Clear();
+    renderHtml();
     document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
     displayQuantity()
 })
@@ -74,6 +76,10 @@ plusBtn.forEach((button)=>{
         let itemID = button.dataset.productId;
         plusQuanity(itemID)
         document.querySelector(".count-js").innerHTML = `${addquantity()} item in your cart`;
-    displayQuantity()
+        displayQuantity()
     })
 })
+
+}
+renderHtml();
+    
