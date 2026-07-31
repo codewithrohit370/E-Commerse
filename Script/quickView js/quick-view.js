@@ -89,3 +89,5 @@ products.forEach((product)=>{
     })    
 
 })
+
+displayQuantity();
