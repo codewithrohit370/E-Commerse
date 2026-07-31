@@ -241,10 +241,10 @@ hoverProduct.forEach((hover) => {
 displayQuantity()
 let AddBtn = document.querySelectorAll(".Add-btn");
 let count = 1;
-let addTimeOut;
-let resetTimeOut;
 AddBtn.forEach((Button) => {
     Button.addEventListener("click", () => {
+        let addTimeOut;
+        let resetTimeOut;
         Button.style.opacity = 0.5;
         Button.innerHTML = `<div class="loader"></div> Adding...`;
         clearTimeout(addTimeOut)
@@ -263,6 +263,7 @@ AddBtn.forEach((Button) => {
                     ease: "power2.out"
                 }
             );
+            
         }, 1000);
 
         resetTimeOut = setTimeout(() => {
@@ -277,6 +278,7 @@ AddBtn.forEach((Button) => {
                     ease: "power2.out"
                 }
             );
+            
         }, 2000);
 
 
