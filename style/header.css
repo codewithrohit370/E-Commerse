@@ -97,6 +97,19 @@ nav {
     display: none;
 }
 
+.heart-icon-1{
+    font-size: 20px;
+    padding: 0  25px ;
+    border-radius: 50%;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.heart-icon-1:hover{
+    color: #ec9d14;
+    
+}
+
 .bar-icon{
     font-size: 20px;
     padding: 8px;
@@ -107,6 +120,11 @@ nav {
     font-size: 20px;
     padding: 8px;
     transition: background-color 0.25s, border-radius 0.25s;
+}
+
+.cart-icon:hover {
+    background-color: rgb(236, 236, 236);
+    border-radius: 50%;
 }
 
 .add-quantity {
@@ -125,10 +143,7 @@ nav {
     display: none;
 }
 
-.cart-icon:hover {
-    background-color: rgb(236, 236, 236);
-    border-radius: 50%;
-}
+
 
 .Btns {
     display: flex;
@@ -261,6 +276,9 @@ nav {
     }
     .bar-icon{
         display: block;
+    }
+    .heart-icon-1{
+        padding: 8px;
     }
 }
 
