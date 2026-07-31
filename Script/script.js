@@ -176,7 +176,7 @@ function renderBanner() {
 // Create Html for add product
 let Html = '';
 products.forEach((product, index) => {
-    Html += `<div class="product">
+    Html += `<div class="product" data-product-id="${product.id}">
             <div class="product-images-box">
                 <img src="${product.image}" >
             </div>
@@ -193,11 +193,12 @@ products.forEach((product, index) => {
 let hoverHtml = '';
 const hoverProduct = document.querySelectorAll(".product");
 hoverProduct.forEach((hover) => {
+    let productID = hover.dataset.productId;
     let hoverImage = hover.querySelector(".product-images-box");
     const img = hoverImage.querySelector("img");
     hoverImage.addEventListener("mouseenter", () => {
         hoverHtml = `<div class="hover-effect">
-        <a href="quickView.html"
+        <a href="quickView.html?id=${productID}">
         <button class="view-btn"><i class="fa-regular fa-eye"></i> Quick View</button></a>
         <i class="fa-regular fa-heart heart-icon"></i>
         </div>`
@@ -264,7 +265,7 @@ AddBtn.forEach((Button) => {
                     ease: "power2.out"
                 }
             );
-            
+
         }, 1000);
 
         resetTimeOut = setTimeout(() => {
@@ -279,7 +280,7 @@ AddBtn.forEach((Button) => {
                     ease: "power2.out"
                 }
             );
-            
+
         }, 2000);
 
 
@@ -299,7 +300,7 @@ AddBtn.forEach((Button) => {
                 quantity: count,
             })
         }
-      
+
         localStorage.setItem("Cart", JSON.stringify(Cart));
         count = 1
 
