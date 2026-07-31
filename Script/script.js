@@ -197,7 +197,8 @@ hoverProduct.forEach((hover) => {
     const img = hoverImage.querySelector("img");
     hoverImage.addEventListener("mouseenter", () => {
         hoverHtml = `<div class="hover-effect">
-        <button class="view-btn"><i class="fa-regular fa-eye"></i> Quick View</button>
+        <a href="quickView.html"
+        <button class="view-btn"><i class="fa-regular fa-eye"></i> Quick View</button></a>
         <i class="fa-regular fa-heart heart-icon"></i>
         </div>`
         hoverImage.insertAdjacentHTML("beforeend", hoverHtml);
