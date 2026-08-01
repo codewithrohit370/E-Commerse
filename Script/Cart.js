@@ -44,12 +44,12 @@ export function updateCart(productId) {
         }
     })
     Cart = newArr;
-    localStorage.setItem("Cart", JSON.stringify(Cart))
+    saveLocalStroge();
 }
 
 export function Clear() {
     Cart = [];
-    localStorage.setItem("Cart", JSON.stringify(Cart))
+    saveLocalStroge();
 }
 
 export function removeQuanity(productId) {
@@ -72,7 +72,7 @@ export function removeQuanity(productId) {
         }
 
     })
-    localStorage.setItem("Cart", JSON.stringify(Cart));
+    saveLocalStroge();
 }
 export function plusQuanity(productId) {
     Cart.forEach((item) => {
@@ -87,5 +87,9 @@ export function plusQuanity(productId) {
         minusBtn.classList.remove("disabled");
 
     })
+    saveLocalStroge();
+}
+
+export function saveLocalStroge(){
     localStorage.setItem("Cart", JSON.stringify(Cart));
 }

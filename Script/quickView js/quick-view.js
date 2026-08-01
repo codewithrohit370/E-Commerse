@@ -1,5 +1,5 @@
 import { products } from "../product.js";
-import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem } from "../Cart.js";
+import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem , saveLocalStroge } from "../Cart.js";
 
 const params = new URLSearchParams(window.location.search);
 
@@ -7,7 +7,13 @@ const productId = params.get("id");
 let selectedQuanity = 1
 let html;
 let matchingItem;
+let cartMatchingItem;
 displayQuantity();
+Cart.forEach((item)=>{
+    if(item.ProductId === productId){
+        cartMatchingItem = item
+    }
+})
 products.forEach((product) => {
     if (product.id === productId) {
         matchingItem = product
@@ -41,7 +47,7 @@ products.forEach((product) => {
 
                 <div class="counter">
                     <button class="minus-btn" ${selectedQuanity === 1 ? `disabled` : ``}>-</button>
-                    <span class="display-quantity">1</span>
+                    <span class="display-quantity">${(cartMatchingItem)? cartMatchingItem.quantity: '1'}</span>
                     <button class="plus-btn">+</button>
                 </div>
             </div>
@@ -110,16 +116,16 @@ minusBtn.addEventListener('click', () => {
 })
 
 let addBtn = document.querySelector(".cartBtn")
+let addTime;
+let resetTime;
 addBtn.addEventListener('click', () => {
 
-        let addTimeOut;
-        let resetTimeOut;
         addBtn.style.opacity = 0.5;
         addBtn.innerHTML = `<div class="loader"></div> Adding...`;
-        clearTimeout(addTimeOut)
-        clearTimeout(resetTimeOut)
+        clearTimeout(addTime)
+        clearTimeout(resetTime)
 
-        addTimeOut = setTimeout(() => {
+        addTime = setTimeout(() => {
             addBtn.style.opacity = 1;
             addBtn.style.backgroundColor = "#07d600";
             addBtn.innerHTML = `<i class="fa-solid fa-check"></i> &nbsp;Added to Cart`;
@@ -135,7 +141,7 @@ addBtn.addEventListener('click', () => {
 
         }, 1000);
 
-        resetTimeOut = setTimeout(() => {
+        resetTime = setTimeout(() => {
             addBtn.style.backgroundColor = "";
             addBtn.innerHTML = "<i class=`fa-solid fa-cart-shopping`></i> Add to Cart";
 
@@ -165,6 +171,6 @@ addBtn.addEventListener('click', () => {
         });
     }
     console.log(Cart)
+    saveLocalStroge();
     displayQuantity();
 })
-updateCart();
