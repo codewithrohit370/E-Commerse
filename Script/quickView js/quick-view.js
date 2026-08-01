@@ -147,7 +147,7 @@ addBtn.addEventListener('click', () => {
 
         resetTime = setTimeout(() => {
             addBtn.style.backgroundColor = "";
-            addBtn.innerHTML = "<i class=`fa-solid fa-cart-shopping`></i> Add to Cart";
+            addBtn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Add to Cart`;
 
             gsap.fromTo(addBtn,
                 { opacity: 0 },
