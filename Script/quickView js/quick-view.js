@@ -1,19 +1,19 @@
 import { products } from "../product.js";
-import { Cart, addquantity, displayQuantity , updateCart , Clear , removeQuanity , plusQuanity , renderTotalCartItem} from "../Cart.js";
+import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem } from "../Cart.js";
 
 const params = new URLSearchParams(window.location.search);
 
 const productId = params.get("id");
-
-
+let selectedQuanity = 1
 let html;
-let matchingItem ;
-products.forEach((product)=>{
-    if(product.id === productId){
+let matchingItem;
+displayQuantity();
+products.forEach((product) => {
+    if (product.id === productId) {
         matchingItem = product
     }
-    if(matchingItem){
-    html = `
+    if (matchingItem) {
+        html = `
          <div class="product-img-box">
             <img src="${matchingItem.image}" alt="Product Image">
         </div>
@@ -27,7 +27,7 @@ products.forEach((product)=>{
 
             <div class="price">
                 <h2>₹${matchingItem.priceCents}</h2>
-                <del>₹${matchingItem.priceCents + Math.round(matchingItem.priceCents * 33/100)}</del>
+                <del>₹${matchingItem.priceCents + Math.round(matchingItem.priceCents * 33 / 100)}</del>
                 <span class="discount">33% OFF</span>
             </div>
 
@@ -40,9 +40,9 @@ products.forEach((product)=>{
                 <h3>Quantity</h3>
 
                 <div class="counter">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
+                    <button class="minus-btn" ${selectedQuanity === 1 ? `disabled` : ``}>-</button>
+                    <span class="display-quantity">1</span>
+                    <button class="plus-btn">+</button>
                 </div>
             </div>
 
@@ -75,19 +75,58 @@ products.forEach((product)=>{
     }
     document.querySelector(".quick-view").innerHTML = html;
     gsap.from(".product-img-box", {
-            opacity: 0,
-            scale:0,
-            x:-200,
-            duration: 0.5,
-        })
+        opacity: 0,
+        scale: 0,
+        x: -200,
+        duration: 0.5,
+    })
 
-    gsap.from(".product-details",{
-        opacity:0,
-        scale:0,
-        x:300,
-        duration:0.5,
-    })    
+    gsap.from(".product-details", {
+        opacity: 0,
+        scale: 0,
+        x: 300,
+        duration: 0.5,
+    })
 
 })
 
-displayQuantity();
+let plusBtn = document.querySelector(".plus-btn");
+plusBtn.addEventListener('click', () => {
+    selectedQuanity++;
+    minusBtn.disabled = false;
+
+    document.querySelector(".display-quantity").innerHTML = selectedQuanity;
+})
+
+let minusBtn = document.querySelector(".minus-btn");
+minusBtn.addEventListener('click', () => {
+    selectedQuanity--;
+    if (selectedQuanity === 1) {
+        minusBtn.disabled = true;
+    } else {
+        minusBtn.disabled = false;
+    }
+    document.querySelector(".display-quantity").innerHTML = selectedQuanity;
+})
+
+let addBtn = document.querySelector(".cartBtn")
+addBtn.addEventListener('click', () => {
+
+    let matchingId;
+    Cart.forEach((itme) => {
+        if (itme.ProductId === productId) {
+            matchingId = itme
+        }
+    })
+    if (matchingId) {
+        matchingId.quantity += selectedQuanity;
+    } else {
+        Cart.push({
+            ProductId: productId,
+            quantity: selectedQuanity
+        });
+    }
+    console.log(Cart)
+    displayQuantity();
+})
+updateCart();

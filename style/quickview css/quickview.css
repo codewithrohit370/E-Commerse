@@ -144,6 +144,10 @@
     font-weight: 600;
 }
 
+.minus-btn.disabled {
+    color: gray;
+    cursor: not-allowed;
+}
 /* ===========================
         FEATURES
 =========================== */

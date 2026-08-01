@@ -69,7 +69,7 @@ minusBtn.forEach((button)=>{
         renderHtml();
         renderpayment();
         renderTotalCartItem();
-    displayQuantity()
+        displayQuantity()
     })
 })
 let plusBtn = document.querySelectorAll('.plus-btn')
