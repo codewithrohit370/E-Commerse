@@ -10,6 +10,9 @@ export function addquantity() {
 
 export function displayQuantity() {
     const quantityElement = document.querySelector(".add-quantity");
+    if(!quantityElement){
+        return
+    }
     if (addquantity() > 0) {
         quantityElement.style.display = "flex";
         quantityElement.textContent = addquantity();

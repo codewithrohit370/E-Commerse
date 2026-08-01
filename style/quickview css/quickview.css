@@ -144,10 +144,7 @@
     font-weight: 600;
 }
 
-.minus-btn.disabled {
-    color: gray;
-    cursor: not-allowed;
-}
+
 /* ===========================
         FEATURES
 =========================== */
@@ -191,12 +188,29 @@
 
     background: #ff9800;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 
     font-size: 18px;
     font-weight: 600;
 
     cursor: pointer;
     transition: .3s;
+}
+
+.loader {
+  border-top: 3px solid black; 
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .cartBtn:hover {

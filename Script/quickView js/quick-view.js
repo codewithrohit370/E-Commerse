@@ -112,6 +112,44 @@ minusBtn.addEventListener('click', () => {
 let addBtn = document.querySelector(".cartBtn")
 addBtn.addEventListener('click', () => {
 
+        let addTimeOut;
+        let resetTimeOut;
+        addBtn.style.opacity = 0.5;
+        addBtn.innerHTML = `<div class="loader"></div> Adding...`;
+        clearTimeout(addTimeOut)
+        clearTimeout(resetTimeOut)
+
+        addTimeOut = setTimeout(() => {
+            addBtn.style.opacity = 1;
+            addBtn.style.backgroundColor = "#07d600";
+            addBtn.innerHTML = `<i class="fa-solid fa-check"></i> &nbsp;Added to Cart`;
+
+            gsap.fromTo(addBtn,
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                }
+            );
+
+        }, 1000);
+
+        resetTimeOut = setTimeout(() => {
+            addBtn.style.backgroundColor = "";
+            addBtn.innerHTML = "<i class=`fa-solid fa-cart-shopping`></i> Add to Cart";
+
+            gsap.fromTo(addBtn,
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                }
+            );
+
+        }, 2000);
+    
     let matchingId;
     Cart.forEach((itme) => {
         if (itme.ProductId === productId) {
