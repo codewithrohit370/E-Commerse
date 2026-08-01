@@ -11,7 +11,8 @@ let cartMatchingItem;
 displayQuantity();
 Cart.forEach((item)=>{
     if(item.ProductId === productId){
-        cartMatchingItem = item
+        cartMatchingItem = item;
+        selectedQuanity = item.quantity;
     }
 })
 products.forEach((product) => {
@@ -106,12 +107,15 @@ plusBtn.addEventListener('click', () => {
 
 let minusBtn = document.querySelector(".minus-btn");
 minusBtn.addEventListener('click', () => {
+    if (selectedQuanity > 1) {
     selectedQuanity--;
+    }
     if (selectedQuanity === 1) {
         minusBtn.disabled = true;
     } else {
         minusBtn.disabled = false;
-    }
+    }   
+    
     document.querySelector(".display-quantity").innerHTML = selectedQuanity;
 })
 
@@ -163,14 +167,14 @@ addBtn.addEventListener('click', () => {
         }
     })
     if (matchingId) {
-        matchingId.quantity += selectedQuanity;
+        matchingId.quantity = selectedQuanity;
     } else {
         Cart.push({
             ProductId: productId,
             quantity: selectedQuanity
         });
     }
-    console.log(Cart)
+    document.querySelector('.display-quantity').innerHTML = selectedQuanity;
     saveLocalStroge();
     displayQuantity();
 })
