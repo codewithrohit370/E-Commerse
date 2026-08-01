@@ -19,7 +19,7 @@ Cart.forEach((cartItem) => {
     })
     cartItemHtml += `
             <div class="selected-item id-${matchingItem.id}">
-                <div class="img-box"><img src="${matchingItem.image}"></div>
+                <div class="img-box" data-product-id="${matchingItem.id}"><img src="${matchingItem.image}"></div>
                 <div class="infomation">
                     <div class="item-decribe">
                         <div class="item-infomation">
@@ -41,6 +41,70 @@ Cart.forEach((cartItem) => {
     `
 })
 document.querySelector(".selected-item-container").innerHTML = cartItemHtml
+
+const cartItems = document.querySelectorAll(".selected-item");
+
+cartItems.forEach((item) => {
+    const imgBox = item.querySelector(".img-box");
+    const img = imgBox.querySelector("img");
+    const productId = imgBox.dataset.productId;
+
+    imgBox.addEventListener("mouseenter", () => {
+
+        imgBox.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="hover-effect">
+                <a href="quickView.html?id=${productId}">
+                    <button class="view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </a>
+            </div>
+            `
+        );
+
+        gsap.to(img, {
+            scale: 1,
+            duration: 0.3
+        });
+
+        gsap.to(item, {
+            y: -5,
+            scale: 1,
+            duration: 0.3
+        });
+
+        gsap.from(imgBox.querySelector(".hover-effect"), {
+            opacity: 0,
+            duration: 0.3
+        });
+
+    });
+
+    imgBox.addEventListener("mouseleave", () => {
+
+        const hoverEffect = imgBox.querySelector(".hover-effect");
+
+        if (hoverEffect) {
+            hoverEffect.remove();
+        }
+
+        gsap.to(img, {
+            scale: 1,
+            duration: 0.3
+        });
+
+        gsap.to(item, {
+            y: 0,
+            scale: 1,
+            duration: 0.3
+        });
+
+    });
+});
+
+
 
 let deleteBtn = document.querySelectorAll('.trash-js')
 deleteBtn.forEach((button)=>{
