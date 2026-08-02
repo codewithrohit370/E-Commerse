@@ -72,15 +72,24 @@ products.forEach((product) => {
 
             </div>
 
-            <button class="cartBtn">
-                <i class="fa-solid fa-cart-shopping"></i>
-                Add to Cart
-            </button>
+
+           <div class="btn-container">
+                <button class="cartBtn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+
+                ${cartMatchingItem ? `
+                <button class="deleteBtn">
+                    <i class="fa-regular fa-trash-can"></i>
+                    Delete
+                </button>
+                ` : ""}
+</div>
 
         </div>
     `
-}
-
+    }
     document.querySelector(".quick-view").innerHTML = html;
     gsap.from(".product-img-box", {
         opacity: 0,
@@ -124,6 +133,19 @@ let addBtn = document.querySelector(".cartBtn")
 let addTime;
 let resetTime;
 addBtn.addEventListener('click', () => {
+
+    if (!document.querySelector(".deleteBtn")) {
+    document.querySelector(".btn-container").insertAdjacentHTML(
+        "beforeend",
+        `
+        <button class="deleteBtn">
+            <i class="fa-regular fa-trash-can"></i>
+            Delete
+        </button>
+        `
+    );
+}
+
 
     addBtn.style.opacity = 0.5;
     addBtn.innerHTML = `<div class="loader"></div> Adding...`;
@@ -179,3 +201,16 @@ addBtn.addEventListener('click', () => {
     saveLocalStroge();
     displayQuantity();
 })
+const deleteBtn = document.querySelector(".deleteBtn");
+
+if (deleteBtn) {
+    deleteBtn.addEventListener("click", deleteProduct);
+}
+
+function deleteProduct() {
+    updateCart(productId)
+    displayQuantity()
+    document.querySelector(".deleteBtn").remove();
+}
+
+

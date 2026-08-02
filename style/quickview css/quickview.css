@@ -1,5 +1,5 @@
 .quick-view {
-    padding: 110px 20px 20px 20px ;
+    padding: 110px 20px 20px 20px;
     background: #fff;
     border-radius: 22px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
@@ -164,7 +164,7 @@
     text-align: center;
 }
 
-.features-icon{
+.features-icon {
     font-size: 22px;
     color: #ff9800;
     margin-bottom: 10px;
@@ -179,8 +179,13 @@
       BUTTON
 =========================== */
 
+.btn-container {
+    display: flex;
+    gap: 15px;
+}
+
 .cartBtn {
-    width: 100%;
+    flex: 1;
     height: 55px;
 
     border: none;
@@ -188,6 +193,7 @@
 
     background: #ff9800;
     color: white;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,17 +206,40 @@
     transition: .3s;
 }
 
+
+.deleteBtn {
+    width: 55px;
+    height: 55px;   
+    flex-shrink: 0;
+    border: none;
+    border-radius: 14px;
+    background: #ff4d4f;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.deleteBtn:hover {
+    background: #d9363e;
+}
+
+
 .loader {
-  border-top: 3px solid black; 
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  animation: spin 2s linear infinite;
+    border-top: 3px solid black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .cartBtn:hover {
@@ -224,23 +253,23 @@
 
 
 
-@media (max-width:1024px){
+@media (max-width:1024px) {
 
-    .quick-view{
-        gap:40px;
-        padding:110px 30px 30px;
+    .quick-view {
+        gap: 40px;
+        padding: 110px 30px 30px;
     }
 
-    .product-details h1{
-        font-size:30px;
+    .product-details h1 {
+        font-size: 30px;
     }
 
-    .price h2{
-        font-size:28px;
+    .price h2 {
+        font-size: 28px;
     }
 
-    .product-img-box img{
-        height:350px;
+    .product-img-box img {
+        height: 350px;
     }
 
 }
@@ -250,46 +279,46 @@
       768px
 =========================== */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-    .quick-view{
-        flex-direction:column;
-        gap:35px;
-        padding:100px 25px 25px;
+    .quick-view {
+        flex-direction: column;
+        gap: 35px;
+        padding: 100px 25px 25px;
     }
 
-    .product-img-box{
-        width:100%;
+    .product-img-box {
+        width: 100%;
     }
 
-    .product-img-box img{
-        width:100%;
-        max-width:450px;
-        height:350px;
+    .product-img-box img {
+        width: 100%;
+        max-width: 450px;
+        height: 350px;
     }
 
-    .product-details{
-        width:100%;
+    .product-details {
+        width: 100%;
     }
 
-    .product-details h1{
-        font-size:28px;
+    .product-details h1 {
+        font-size: 28px;
     }
 
-    .price h2{
-        font-size:26px;
+    .price h2 {
+        font-size: 26px;
     }
 
-    .description{
-        font-size:15px;
+    .description {
+        font-size: 15px;
     }
 
-    .features{
-        gap:15px;
+    .features {
+        gap: 15px;
     }
 
-    .features p{
-        font-size:14px;
+    .features p {
+        font-size: 14px;
     }
 
 }
@@ -299,70 +328,70 @@
       576px
 =========================== */
 
-@media (max-width:576px){
+@media (max-width:576px) {
 
-    .quick-view{
-        padding:90px 18px 20px;
-        gap:25px;
+    .quick-view {
+        padding: 90px 18px 20px;
+        gap: 25px;
     }
 
-    .badge{
-        font-size:12px;
-        padding:6px 14px;
+    .badge {
+        font-size: 12px;
+        padding: 6px 14px;
     }
 
-    .product-details h1{
-        font-size:24px;
+    .product-details h1 {
+        font-size: 24px;
     }
 
-    .price{
-        gap:12px;
-        flex-wrap:wrap;
+    .price {
+        gap: 12px;
+        flex-wrap: wrap;
     }
 
-    .price h2{
-        font-size:24px;
+    .price h2 {
+        font-size: 24px;
     }
 
-    .price del{
-        font-size:18px;
+    .price del {
+        font-size: 18px;
     }
 
-    .discount{
-        font-size:11px;
-        padding:5px 10px;
+    .discount {
+        font-size: 11px;
+        padding: 5px 10px;
     }
 
-    .description{
-        font-size:14px;
-        line-height:1.6;
+    .description {
+        font-size: 14px;
+        line-height: 1.6;
     }
 
-    .counter{
-        width:150px;
-        height:42px;
+    .counter {
+        width: 150px;
+        height: 42px;
     }
 
-    .counter button{
-        font-size:22px;
+    .counter button {
+        font-size: 22px;
     }
 
-    .features{
-        flex-direction:column;
-        gap:18px;
+    .features {
+        flex-direction: column;
+        gap: 18px;
     }
 
-    .features div{
-        justify-content:flex-start;
+    .features div {
+        justify-content: flex-start;
     }
 
-    .cartBtn{
-        height:50px;
-        font-size:16px;
+    .cartBtn {
+        height: 50px;
+        font-size: 16px;
     }
 
-    .product-img-box img{
-        height:280px;
+    .product-img-box img {
+        height: 280px;
     }
 
 }
@@ -372,26 +401,26 @@
       400px
 =========================== */
 
-@media (max-width:400px){
+@media (max-width:400px) {
 
-    .quick-view{
-        padding:85px 15px 20px;
+    .quick-view {
+        padding: 85px 15px 20px;
     }
 
-    .product-details h1{
-        font-size:22px;
+    .product-details h1 {
+        font-size: 22px;
     }
 
-    .price h2{
-        font-size:22px;
+    .price h2 {
+        font-size: 22px;
     }
 
-    .product-img-box img{
-        height:240px;
+    .product-img-box img {
+        height: 240px;
     }
 
-    .counter{
-        width:140px;
+    .counter {
+        width: 140px;
     }
 
 }
