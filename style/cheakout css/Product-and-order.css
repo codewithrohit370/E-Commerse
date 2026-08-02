@@ -201,6 +201,16 @@
     color: #F59E0B;
 }
 
+.items-info p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.items-info p span{
+    font-weight: 500;
+}
+
 .proceed-btn{
     width: 100%;
     padding: 10px;

@@ -28,6 +28,7 @@ let shippingCost = Number(localStorage.getItem("shippingCost")) || 0;
                 <div class="items-info">
                     <p>Subtotal (${addquantity()} item) <span>Rs. ${totalAmount}</span></p>
                     <p>Shipping <span>${shippingCost === 0 ? "Free" : `Rs. ${shippingCost}`}</span></p>
+                    <p>Estimated Delivery <span></span></p>
                     <p>Tax <span>Rs. ${taxAmount}</span></p>
                 </div>
 
@@ -100,7 +101,7 @@ let shippingCost = Number(localStorage.getItem("shippingCost")) || 0;
             localStorage.setItem("shippingCost", shippingCost);
             localStorage.setItem("deliveryId", ID);
             renderpayment()
-            renderHtml();  
+             
         })
     })
     }

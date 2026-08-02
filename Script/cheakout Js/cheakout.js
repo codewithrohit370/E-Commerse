@@ -8,19 +8,7 @@ import { delveryOption } from "../delivery-option.js";
 export function renderHtml() {
     renderpayment();
     displayQuantity();
-    renderTotalCartItem();
-
-    const deliveryId = localStorage.getItem("deliveryId");
-
-    const selectedOption = delveryOption.find(
-        option => option.delveryID === deliveryId
-    );
-
-    const deliveryDate = dayjs()
-        .add(selectedOption.delveryDays, "day")
-        .format("dddd, MMMM D");
-    
-    console.log(deliveryDate)    
+    renderTotalCartItem();   
 
     let cartItemHtml = '';
 
