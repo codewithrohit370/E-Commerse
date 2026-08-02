@@ -143,7 +143,7 @@ addBtn.addEventListener('click', () => {
             Delete
         </button>
         `
-    );
+    );  
 }
 
 
