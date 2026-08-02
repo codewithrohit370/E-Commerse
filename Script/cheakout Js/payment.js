@@ -1,5 +1,8 @@
-    import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity } from "../Cart.js";
-    import { products } from "../product.js";
+import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity } from "../Cart.js";
+import { products } from "../product.js";
+import { delveryOption } from "../delivery-option.js";
+import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js"
+import { renderHtml } from "./cheakout.js";
 
 
 
@@ -42,7 +45,7 @@ let shippingCost = Number(localStorage.getItem("shippingCost")) || 0;
 
                     <label class="shipping-option">
                         <div class="shipping-left">
-                            <input type="radio" name="shipping" value="0" ${shippingCost === 0 ? "checked" : ""}>
+                            <input type="radio" name="shipping" value="0" data-delivery-id="1" ${shippingCost === 0 ? "checked" : ""}>
 
                             <div class="shipping-details">
                                 <span class="shipping-title">Free Shipping</span>
@@ -55,7 +58,7 @@ let shippingCost = Number(localStorage.getItem("shippingCost")) || 0;
 
                     <label class="shipping-option">
                         <div class="shipping-left">
-                            <input type="radio" name="shipping" value="199" ${shippingCost === 199 ? "checked" : ""}>
+                            <input type="radio" name="shipping" value="199" data-delivery-id="2" ${shippingCost === 199 ? "checked" : ""}>
 
                             <div class="shipping-details">
                                 <span class="shipping-title">Express Shipping</span>
@@ -68,7 +71,7 @@ let shippingCost = Number(localStorage.getItem("shippingCost")) || 0;
 
                     <label class="shipping-option">
                         <div class="shipping-left">
-                            <input type="radio" name="shipping" value="299"  ${shippingCost === 299 ? "checked" : ""}>
+                            <input type="radio" name="shipping" value="299" data-delivery-id="3" ${shippingCost === 299 ? "checked" : ""}>
 
                             <div class="shipping-details">
                                 <span class="shipping-title">Next Day Delivery</span>
@@ -92,8 +95,12 @@ let shippingCost = Number(localStorage.getItem("shippingCost")) || 0;
         document.querySelectorAll('input[name="shipping"]').forEach((radio) => {
         radio.addEventListener("change", (event) => {
             shippingCost = Number(event.target.value);
+            let ID = event.target.dataset.deliveryId;
+            
             localStorage.setItem("shippingCost", shippingCost);
+            localStorage.setItem("deliveryId", ID);
             renderpayment()
+            renderHtml();  
         })
     })
     }
