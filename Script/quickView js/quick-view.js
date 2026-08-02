@@ -1,5 +1,5 @@
 import { products } from "../product.js";
-import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem , saveLocalStroge } from "../Cart.js";
+import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem, saveLocalStroge } from "../Cart.js";
 
 const params = new URLSearchParams(window.location.search);
 
@@ -9,8 +9,8 @@ let html;
 let matchingItem;
 let cartMatchingItem;
 displayQuantity();
-Cart.forEach((item)=>{
-    if(item.ProductId === productId){
+Cart.forEach((item) => {
+    if (item.ProductId === productId) {
         cartMatchingItem = item;
         selectedQuanity = item.quantity;
     }
@@ -48,7 +48,7 @@ products.forEach((product) => {
 
                 <div class="counter">
                     <button class="minus-btn" ${selectedQuanity === 1 ? `disabled` : ``}>-</button>
-                    <span class="display-quantity">${(cartMatchingItem)? cartMatchingItem.quantity: '1'}</span>
+                    <span class="display-quantity">${(cartMatchingItem) ? cartMatchingItem.quantity : '1'}</span>
                     <button class="plus-btn">+</button>
                 </div>
             </div>
@@ -79,7 +79,8 @@ products.forEach((product) => {
 
         </div>
     `
-    }
+}
+
     document.querySelector(".quick-view").innerHTML = html;
     gsap.from(".product-img-box", {
         opacity: 0,
@@ -108,14 +109,14 @@ plusBtn.addEventListener('click', () => {
 let minusBtn = document.querySelector(".minus-btn");
 minusBtn.addEventListener('click', () => {
     if (selectedQuanity > 1) {
-    selectedQuanity--;
+        selectedQuanity--;
     }
     if (selectedQuanity === 1) {
         minusBtn.disabled = true;
     } else {
         minusBtn.disabled = false;
-    }   
-    
+    }
+
     document.querySelector(".display-quantity").innerHTML = selectedQuanity;
 })
 
@@ -124,42 +125,42 @@ let addTime;
 let resetTime;
 addBtn.addEventListener('click', () => {
 
-        addBtn.style.opacity = 0.5;
-        addBtn.innerHTML = `<div class="loader"></div> Adding...`;
-        clearTimeout(addTime)
-        clearTimeout(resetTime)
+    addBtn.style.opacity = 0.5;
+    addBtn.innerHTML = `<div class="loader"></div> Adding...`;
+    clearTimeout(addTime)
+    clearTimeout(resetTime)
 
-        addTime = setTimeout(() => {
-            addBtn.style.opacity = 1;
-            addBtn.style.backgroundColor = "#07d600";
-            addBtn.innerHTML = `<i class="fa-solid fa-check"></i> &nbsp;Added to Cart`;
+    addTime = setTimeout(() => {
+        addBtn.style.opacity = 1;
+        addBtn.style.backgroundColor = "#07d600";
+        addBtn.innerHTML = `<i class="fa-solid fa-check"></i> &nbsp;Added to Cart`;
 
-            gsap.fromTo(addBtn,
-                { opacity: 0 },
-                {
-                    opacity: 1,
-                    duration: 0.3,
-                    ease: "power2.out"
-                }
-            );
+        gsap.fromTo(addBtn,
+            { opacity: 0 },
+            {
+                opacity: 1,
+                duration: 0.3,
+                ease: "power2.out"
+            }
+        );
 
-        }, 1000);
+    }, 1000);
 
-        resetTime = setTimeout(() => {
-            addBtn.style.backgroundColor = "";
-            addBtn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Add to Cart`;
+    resetTime = setTimeout(() => {
+        addBtn.style.backgroundColor = "";
+        addBtn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Add to Cart`;
 
-            gsap.fromTo(addBtn,
-                { opacity: 0 },
-                {
-                    opacity: 1,
-                    duration: 0.3,
-                    ease: "power2.out"
-                }
-            );
+        gsap.fromTo(addBtn,
+            { opacity: 0 },
+            {
+                opacity: 1,
+                duration: 0.3,
+                ease: "power2.out"
+            }
+        );
 
-        }, 2000);
-    
+    }, 2000);
+
     let matchingId;
     Cart.forEach((itme) => {
         if (itme.ProductId === productId) {
