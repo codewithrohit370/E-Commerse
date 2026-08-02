@@ -144,8 +144,15 @@ addBtn.addEventListener('click', () => {
         </button>
         `
     );  
-}
-
+    document.querySelector('.deleteBtn').addEventListener('click',deleteProduct)
+    gsap.from(".deleteBtn",{
+        opacity:0,
+        x:100,
+        duration:0.3
+    })
+}   
+    
+        
 
     addBtn.style.opacity = 0.5;
     addBtn.innerHTML = `<div class="loader"></div> Adding...`;
