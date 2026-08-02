@@ -177,6 +177,10 @@
     font-weight: 500;
     background-color: rgba(218, 218, 218, 0.596);
 }
+.items-info p:nth-child(3) span{
+    font-weight: 500;
+    font-size: 12px;
+}
 
 .items-total{
     border-bottom: 1px solid rgb(221, 221, 221);
@@ -201,15 +205,6 @@
     color: #F59E0B;
 }
 
-.items-info p{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.items-info p span{
-    font-weight: 500;
-}
 
 .proceed-btn{
     width: 100%;

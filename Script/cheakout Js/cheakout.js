@@ -1,8 +1,6 @@
 import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem } from "../Cart.js";
 import { products } from "../product.js";
 import { renderpayment } from "./payment.js";
-import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js"
-import { delveryOption } from "../delivery-option.js";
 
 
 export function renderHtml() {

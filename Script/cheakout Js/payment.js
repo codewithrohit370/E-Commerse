@@ -7,28 +7,39 @@ import { renderHtml } from "./cheakout.js";
 
 
 let shippingCost = Number(localStorage.getItem("shippingCost")) || 0;
-    export function renderpayment() {
-        let totalAmount = 0;
-        let renderpaymentHtml;
-        Cart.forEach(element => {
-            let matchingItem;
-            products.forEach((item) => {
-                if (item.id === element.ProductId) {
-                    matchingItem = item
-                }
-            })
-            totalAmount += matchingItem.priceCents * element.quantity
+export function renderpayment() {
 
-        });
-        let taxAmount = Math.round((totalAmount + shippingCost)*0.1);
-        let totalAmountAfterTax = totalAmount + taxAmount + shippingCost;
+    const deliveryId = localStorage.getItem("deliveryId") || "1";
 
-        renderpaymentHtml = `
+    const selectedOption = delveryOption.find(
+        option => option.delveryID === deliveryId
+    );
+
+    const deliveryDate = dayjs()
+        .add(selectedOption.delveryDays, "day")
+        .format("dddd, MMMM D");
+
+    let totalAmount = 0;
+    let renderpaymentHtml;
+    Cart.forEach(element => {
+        let matchingItem;
+        products.forEach((item) => {
+            if (item.id === element.ProductId) {
+                matchingItem = item
+            }
+        })
+        totalAmount += matchingItem.priceCents * element.quantity
+
+    });
+    let taxAmount = Math.round((totalAmount + shippingCost) * 0.1);
+    let totalAmountAfterTax = totalAmount + taxAmount + shippingCost;
+
+    renderpaymentHtml = `
                 <p class="order-heading">Order Summary</p>
                 <div class="items-info">
                     <p>Subtotal (${addquantity()} item) <span>Rs. ${totalAmount}</span></p>
                     <p>Shipping <span>${shippingCost === 0 ? "Free" : `Rs. ${shippingCost}`}</span></p>
-                    <p>Estimated Delivery <span></span></p>
+                    <p>Estimated Delivery <span>${deliveryDate}</span></p>
                     <p>Tax <span>Rs. ${taxAmount}</span></p>
                 </div>
 
@@ -91,18 +102,18 @@ let shippingCost = Number(localStorage.getItem("shippingCost")) || 0;
                 </div>
         `
 
-        document.querySelector(".order-container").innerHTML = renderpaymentHtml
+    document.querySelector(".order-container").innerHTML = renderpaymentHtml
 
-        document.querySelectorAll('input[name="shipping"]').forEach((radio) => {
+    document.querySelectorAll('input[name="shipping"]').forEach((radio) => {
         radio.addEventListener("change", (event) => {
             shippingCost = Number(event.target.value);
             let ID = event.target.dataset.deliveryId;
-            
+
             localStorage.setItem("shippingCost", shippingCost);
             localStorage.setItem("deliveryId", ID);
             renderpayment()
-             
+
         })
     })
-    }
+}
 
