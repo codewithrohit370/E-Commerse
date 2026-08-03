@@ -152,7 +152,7 @@
 
 @media (max-width:600px){
      .product-section{
-        padding: 50px 20px;
+    padding: 50px 20px;
     grid-template-columns: 1fr 1fr;
 }
 
