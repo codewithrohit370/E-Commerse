@@ -1,12 +1,13 @@
-import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem } from "../Cart.js";
+import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem , showheaderOptionOnClick } from "../Cart.js";
 import { products } from "../product.js";
 import { renderpayment } from "./payment.js";
 
 
+showheaderOptionOnClick()
 export function renderHtml() {
     renderpayment();
     displayQuantity();
-    renderTotalCartItem();   
+    renderTotalCartItem();
 
     let cartItemHtml = '';
 

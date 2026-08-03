@@ -1,6 +1,7 @@
 import { products } from "../product.js";
-import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem, saveLocalStroge } from "../Cart.js";
+import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem, saveLocalStroge , showheaderOptionOnClick } from "../Cart.js";
 
+showheaderOptionOnClick();
 const params = new URLSearchParams(window.location.search);
 
 const productId = params.get("id");

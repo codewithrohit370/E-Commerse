@@ -10,7 +10,7 @@ export function addquantity() {
 
 export function displayQuantity() {
     const quantityElement = document.querySelector(".add-quantity");
-    if(!quantityElement){
+    if (!quantityElement) {
         return
     }
     if (addquantity() > 0) {
@@ -90,6 +90,53 @@ export function plusQuanity(productId) {
     saveLocalStroge();
 }
 
-export function saveLocalStroge(){
+export function saveLocalStroge() {
     localStorage.setItem("Cart", JSON.stringify(Cart));
+}
+
+export function showheaderOptionOnClick() {
+    const searchBtn = document.querySelector(".search-btn")
+
+    let isBtn = false;
+
+    searchBtn.addEventListener('click', () => {
+        if (!isBtn) {
+            if (!document.querySelector(".btn-js")) {
+                document.querySelector('header').insertAdjacentHTML("beforeend", `<div class="second-section-1">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search products..." class="search-input-1">
+                </div>`);
+                isBtn = true;
+            } else {
+                document.querySelector('.btn-js').insertAdjacentHTML("beforebegin", `<div class="second-section-1">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search products..." class="search-input-1">
+                </div>`);
+                isBtn = true;
+            }
+        } else {
+            document.querySelector(".second-section-1").remove();
+            isBtn = false
+        }
+
+    })
+
+    let bar_Btn = false;
+    const barBtn = document.querySelector(".bar-Btn")
+    barBtn.addEventListener("click", () => {
+        if (!bar_Btn) {
+            document.querySelector('header').insertAdjacentHTML("beforeend", `<div class="btn-js">
+                    <p>Contact</p>
+                    <hr>
+                   <div class="Btns-1">
+                    <button>Sign In</button>
+                    <button>Sign Up </button>
+                </div>
+                </div>`);
+            bar_Btn = true;
+        } else {
+            document.querySelector(".btn-js").remove();
+            bar_Btn = false;
+        }
+    })
 }
