@@ -1,5 +1,5 @@
 import { products } from "./product.js";
-import { Cart, addquantity, displayQuantity , saveLocalStroge , showheaderOptionOnClick} from "./Cart.js";
+import { Cart, addquantity, displayQuantity, saveLocalStroge, showheaderOptionOnClick } from "./Cart.js";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -202,7 +202,7 @@ let AddBtn = document.querySelectorAll(".Add-btn");
 let count = 1;
 AddBtn.forEach((Button) => {
     Button.addEventListener("click", () => {
-       clearTimeout(Button.addTimeOut);
+        clearTimeout(Button.addTimeOut);
         clearTimeout(Button.resetTimeOut);
         Button.style.opacity = 0.5;
         Button.innerHTML = `<div class="loader"></div> Adding...`;
