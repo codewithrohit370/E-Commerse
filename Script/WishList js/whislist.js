@@ -1,6 +1,6 @@
 import { addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem , showheaderOptionOnClick } from "../Cart.js";
 import { products } from "../product.js";
-import { wishListCart } from "./wishlistdata.js";
+import { wishListCart , deleteWishListItem } from "./wishlistdata.js";
 
 
 
@@ -26,7 +26,7 @@ export function renderHtml() {
                             <p>${matchingItem.name}</p>
                             <p>Rs.${matchingItem.priceCents} each</p>
                         </div>
-                        <button class="trash-icon trash-js" data-product-id= "${matchingItem.id}"><i class="fa-regular fa-trash-can "></i></button>
+                        <button class="trash-icon trash-js" data-product-id="${matchingItem.id}"><i class="fa-regular fa-trash-can "></i></button>
                     </div>
                     <div class="quantity-price">
                         <div class="quantity">
@@ -108,13 +108,7 @@ export function renderHtml() {
     deleteBtn.forEach((button) => {
         button.addEventListener(("click"), () => {
             let itemID = button.dataset.productId;
-            let newArr = []
-                wishListCart.forEach((item) => {
-                    if (productId !== item.ProductId) {
-                        newArr.push(item)
-                    }
-                })
-                wishListCart = newArr;
+            deleteWishListItem(itemID);
             renderHtml();
         })
     })
