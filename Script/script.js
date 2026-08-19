@@ -1,5 +1,6 @@
 import { products } from "./product.js";
-import { Cart, addquantity, displayQuantity, saveLocalStroge, showheaderOptionOnClick } from "./Cart.js";
+import { Cart, addquantity, displayQuantity, saveLocalStroge, showheaderOptionOnClick , wishlistSaveItem } from "./Cart.js";
+import { wishListCart } from "./WishList js/whislist.js";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -157,7 +158,7 @@ hoverProduct.forEach((hover) => {
         hoverHtml = `<div class="hover-effect">
         <a href="quickView.html?id=${productID}">
         <button class="view-btn"><i class="fa-regular fa-eye"></i> Quick View</button></a>
-        <i class="fa-regular fa-heart heart-icon"></i>
+        <i class="fa-regular fa-heart heart-icon heartIcon"></i>
         </div>`
         hoverImage.insertAdjacentHTML("beforeend", hoverHtml);
         gsap.to(img, {
@@ -262,6 +263,21 @@ AddBtn.forEach((Button) => {
 
     })
 })
+
+document.querySelector(".product-section").addEventListener("click", (e) => {
+    const heart = e.target.closest(".heartIcon");
+
+    if (heart) {
+        const product = heart.closest(".product");
+        let productID = product.dataset.productId;
+        wishListCart.push({
+            ProductId: productID,
+            count: 1
+        })
+        wishlistSaveItem();
+    }
+});
+
 
 gsap.utils.toArray(".product").forEach((card) => {
     gsap.from(card, {

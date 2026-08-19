@@ -1,4 +1,6 @@
+import { wishListCart } from "./WishList js/whislist.js";
 export let Cart = JSON.parse(localStorage.getItem('Cart')) || [];
+
 
 export function addquantity() {
     let Totalcount = 0
@@ -92,6 +94,10 @@ export function plusQuanity(productId) {
 
 export function saveLocalStroge() {
     localStorage.setItem("Cart", JSON.stringify(Cart));
+}
+
+export function wishlistSaveItem(){
+    localStorage.setItem("wishListCart", JSON.stringify(wishListCart));
 }
 
 export function showheaderOptionOnClick() {
