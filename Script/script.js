@@ -1,6 +1,6 @@
 import { products } from "./product.js";
-import { Cart, addquantity, displayQuantity, saveLocalStroge, showheaderOptionOnClick , wishlistSaveItem } from "./Cart.js";
-import { wishListCart } from "./WishList js/whislist.js";
+import { Cart, addquantity, displayQuantity, saveLocalStroge, showheaderOptionOnClick} from "./Cart.js";
+import { wishListCart , wishlistSaveItem} from "./WishList js/wishlistdata.js";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -272,7 +272,7 @@ document.querySelector(".product-section").addEventListener("click", (e) => {
         let productID = product.dataset.productId;
         wishListCart.push({
             ProductId: productID,
-            count: 1
+            quantity: 1
         })
         wishlistSaveItem();
     }

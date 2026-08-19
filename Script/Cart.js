@@ -1,4 +1,4 @@
-import { wishListCart } from "./WishList js/whislist.js";
+import { wishListCart } from "./WishList js/wishlistdata.js";
 export let Cart = JSON.parse(localStorage.getItem('Cart')) || [];
 
 
@@ -96,9 +96,6 @@ export function saveLocalStroge() {
     localStorage.setItem("Cart", JSON.stringify(Cart));
 }
 
-export function wishlistSaveItem(){
-    localStorage.setItem("wishListCart", JSON.stringify(wishListCart));
-}
 
 export function showheaderOptionOnClick() {
     const searchBtn = document.querySelector(".search-btn")
