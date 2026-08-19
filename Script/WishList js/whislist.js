@@ -1,6 +1,6 @@
 import { addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem , showheaderOptionOnClick } from "../Cart.js";
 import { products } from "../product.js";
-import { wishListCart , deleteWishListItem } from "./wishlistdata.js";
+import { wishListCart , deleteWishListItem , clearWishCart} from "./wishlistdata.js";
 
 
 
@@ -115,7 +115,7 @@ export function renderHtml() {
 
     let Clearbtn = document.querySelector(".Clear-btn");
     Clearbtn.addEventListener("click", () => {
-        Clear();
+        clearWishCart();
         renderHtml();
         renderTotalCartItem();
         displayQuantity()

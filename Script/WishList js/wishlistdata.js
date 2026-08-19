@@ -14,3 +14,8 @@ export function deleteWishListItem(itemId){
      wishListCart = newArr;
      wishlistSaveItem();
 }
+
+export function clearWishCart(){
+    wishListCart = [];
+    wishlistSaveItem();
+}
