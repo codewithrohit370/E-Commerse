@@ -1,6 +1,6 @@
 import { addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem , showheaderOptionOnClick } from "../Cart.js";
 import { products } from "../product.js";
-import { wishListCart , deleteWishListItem , clearWishCart} from "./wishlistdata.js";
+import { wishListCart , deleteWishListItem , clearWishCart , removeQuanityFromWishList , plusQuanityFromWishList} from "./wishlistdata.js";
 
 
 
@@ -125,9 +125,8 @@ export function renderHtml() {
     minusBtn.forEach((button) => {
         button.addEventListener("click", () => {
             let itemID = button.dataset.productId;
-            removeQuanity(itemID)
+            removeQuanityFromWishList(itemID)
             renderHtml();
-            renderpayment();
             renderTotalCartItem();
             displayQuantity()
         })
@@ -137,7 +136,7 @@ export function renderHtml() {
 
         button.addEventListener("click", () => {
             let itemID = button.dataset.productId;
-            plusQuanity(itemID)
+            plusQuanityFromWishList(itemID)
             renderHtml();
             renderpayment();
             renderTotalCartItem();

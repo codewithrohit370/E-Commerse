@@ -19,3 +19,42 @@ export function clearWishCart(){
     wishListCart = [];
     wishlistSaveItem();
 }
+
+export function removeQuanityFromWishList(productId) {
+    wishListCart.forEach((item) => {
+        if (productId === item.ProductId) {
+            if (item.quantity > 1) {
+                item.quantity--;
+            }
+            document.querySelector(`.Cart-id-${productId}`).innerHTML = item.quantity;
+
+            const minusBtn = document.querySelector(
+                `.minus-btn[data-product-id="${productId}"]`
+            );
+
+            if (item.quantity === 1) {
+                minusBtn.classList.add("disabled");
+            } else {
+                minusBtn.classList.remove("disabled");
+            }
+        }
+
+    })
+    wishlistSaveItem();
+}
+
+export function plusQuanityFromWishList(productId) {
+    wishListCart.forEach((item) => {
+        if (productId === item.ProductId) {
+            item.quantity++;
+            document.querySelector(`.Cart-id-${productId}`).innerHTML = item.quantity;
+        }
+        const minusBtn = document.querySelector(
+            `.minus-btn[data-product-id="${productId}"]`
+        );
+
+        minusBtn.classList.remove("disabled");
+
+    })
+    wishlistSaveItem();
+}
