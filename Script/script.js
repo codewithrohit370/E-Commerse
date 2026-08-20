@@ -1,6 +1,6 @@
 import { products } from "./product.js";
-import { Cart, addquantity, displayQuantity, saveLocalStroge, showheaderOptionOnClick} from "./Cart.js";
-import { wishListCart , wishlistSaveItem , displayQuantityWishlistItem} from "./WishList js/wishlistdata.js";
+import { Cart, addquantity, displayQuantity, saveLocalStroge, showheaderOptionOnClick } from "./Cart.js";
+import { wishListCart, wishlistSaveItem, displayQuantityWishlistItem } from "./WishList js/wishlistdata.js";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -156,11 +156,21 @@ hoverProduct.forEach((hover) => {
     let hoverImage = hover.querySelector(".product-images-box");
     const img = hoverImage.querySelector("img");
     hoverImage.addEventListener("mouseenter", () => {
-        hoverHtml = `<div class="hover-effect">
-        <a href="quickView.html?id=${productID}">
-        <button class="view-btn"><i class="fa-regular fa-eye"></i> Quick View</button></a>
-        <i class="fa-regular fa-heart heart-icon heartIcon"></i>
-        </div>`
+        const isWishlisted = wishListCart.some(item => item.ProductId === productID);
+
+        hoverHtml = `
+                <div class="hover-effect">
+                    <a href="quickView.html?id=${productID}">
+                    <button class="view-btn">
+                        <i class="fa-regular fa-eye"></i> Quick View
+                    </button>
+                </a>
+
+                <i class="${isWishlisted
+                ? "fa-solid fa-heart active-heart heart-icon"
+                : "fa-regular fa-heart heart-icon"
+            }"></i>
+                </div>`;
         hoverImage.insertAdjacentHTML("beforeend", hoverHtml);
         gsap.to(img, {
             scale: 1.1,
@@ -264,19 +274,37 @@ AddBtn.forEach((Button) => {
 
     })
 })
-
 document.querySelector(".product-section").addEventListener("click", (e) => {
-    const heart = e.target.closest(".heartIcon");
+    const heart = e.target.closest(".heart-icon");
 
-    if (heart) {
-        const product = heart.closest(".product");
-        let productID = product.dataset.productId;
+    if (!heart) return;
+
+    const product = heart.closest(".product");
+    const productID = product.dataset.productId;
+
+    const index = wishListCart.findIndex(
+        item => item.ProductId === productID
+    );
+
+    if (index === -1) {
+        // Add to wishlist
         wishListCart.push({
             ProductId: productID,
             quantity: 1
-        })
-        wishlistSaveItem();
+        });
+
+        heart.classList.remove("fa-regular");
+        heart.classList.add("fa-solid", "active-heart");
+    } else {
+        // Remove from wishlist
+        wishListCart.splice(index, 1);
+
+        heart.classList.remove("fa-solid", "active-heart");
+        heart.classList.add("fa-regular");
     }
+
+    wishlistSaveItem();
+    displayQuantityWishlistItem();
 });
 
 

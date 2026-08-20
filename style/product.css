@@ -126,12 +126,10 @@
     right: 5px;
     cursor: pointer;
 }
-.heart-icon:hover{
-    background-color: rgb(255, 255, 255);
-    color: #ec9d14;
 
+.active-heart{
+    color:red;
 }
-
 
 @media (max-width:1300px) {
     .product-section{
