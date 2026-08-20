@@ -58,3 +58,11 @@ export function plusQuanityFromWishList(productId) {
     })
     wishlistSaveItem();
 }
+
+export function addquantityfromWishlist() {
+    let Totalcount = 0
+    wishListCart.forEach((item) => {
+        Totalcount += item.quantity;
+    })
+    return Totalcount;
+}

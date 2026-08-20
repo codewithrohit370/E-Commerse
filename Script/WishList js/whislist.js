@@ -1,12 +1,12 @@
-import { addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem , showheaderOptionOnClick } from "../Cart.js";
 import { products } from "../product.js";
 import { wishListCart , deleteWishListItem , clearWishCart , removeQuanityFromWishList , plusQuanityFromWishList} from "./wishlistdata.js";
+import { renderpaymentWishListItem } from "./wishlistpayment.js";
+import { showheaderOptionOnClick } from "../Cart.js";
 
 
-
+renderpaymentWishListItem();
 showheaderOptionOnClick()
 export function renderHtml() {
-    console.log(wishListCart)
     let cartItemHtml = '';
 
     wishListCart.forEach((cartItem) => {
@@ -34,7 +34,7 @@ export function renderHtml() {
                             <p class="Cart-id-${matchingItem.id}">${cartItem.quantity}</p>
                             <button class="plus-btn" data-product-id= "${matchingItem.id}"><i class="fa-solid fa-plus"></i></button>
                         </div>
-                        <p class="price">Rs. ${(matchingItem.priceCents * cartItem.quantity)}</p>
+                        <p class="price ">Rs. ${(matchingItem.priceCents * cartItem.quantity)}</p>
                     </div>
                 </div>
             </div>
@@ -110,15 +110,17 @@ export function renderHtml() {
             let itemID = button.dataset.productId;
             deleteWishListItem(itemID);
             renderHtml();
+            renderpaymentWishListItem();
         })
     })
 
     let Clearbtn = document.querySelector(".Clear-btn");
     Clearbtn.addEventListener("click", () => {
         clearWishCart();
+        renderpaymentWishListItem();
         renderHtml();
-        renderTotalCartItem();
-        displayQuantity()
+        // renderTotalCartItem();
+        // displayQuantity()
     })
 
     let minusBtn = document.querySelectorAll('.minus-btn')
@@ -126,9 +128,10 @@ export function renderHtml() {
         button.addEventListener("click", () => {
             let itemID = button.dataset.productId;
             removeQuanityFromWishList(itemID)
+            renderpaymentWishListItem();
             renderHtml();
-            renderTotalCartItem();
-            displayQuantity()
+            // renderTotalCartItem();
+            // displayQuantity()
         })
     })
     let plusBtn = document.querySelectorAll('.plus-btn')
@@ -137,10 +140,10 @@ export function renderHtml() {
         button.addEventListener("click", () => {
             let itemID = button.dataset.productId;
             plusQuanityFromWishList(itemID)
+            renderpaymentWishListItem();
             renderHtml();
-            renderpayment();
-            renderTotalCartItem();
-            displayQuantity()
+            // renderTotalCartItem();
+            // displayQuantity()
         })
     })
 
