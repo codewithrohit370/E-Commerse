@@ -1,6 +1,7 @@
 import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem , showheaderOptionOnClick } from "../Cart.js";
 import { products } from "../product.js";
 import { renderpayment } from "./payment.js";
+import { displayQuantityWishlistItem } from "../WishList js/wishlistdata.js";
 
 
 showheaderOptionOnClick()
@@ -8,7 +9,7 @@ export function renderHtml() {
     renderpayment();
     displayQuantity();
     renderTotalCartItem();
-
+    displayQuantityWishlistItem();
     let cartItemHtml = '';
 
     Cart.forEach((cartItem) => {

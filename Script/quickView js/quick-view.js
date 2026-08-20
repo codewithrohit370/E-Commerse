@@ -1,7 +1,9 @@
 import { products } from "../product.js";
 import { Cart, addquantity, displayQuantity, updateCart, Clear, removeQuanity, plusQuanity, renderTotalCartItem, saveLocalStroge , showheaderOptionOnClick } from "../Cart.js";
+import { displayQuantityWishlistItem } from "../WishList js/wishlistdata.js";
 
 showheaderOptionOnClick();
+displayQuantityWishlistItem();
 const params = new URLSearchParams(window.location.search);
 
 const productId = params.get("id");

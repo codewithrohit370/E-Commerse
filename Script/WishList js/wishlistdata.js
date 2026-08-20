@@ -66,3 +66,26 @@ export function addquantityfromWishlist() {
     })
     return Totalcount;
 }
+
+export function displayQuantityWishlistItem() {
+    const quantityElement = document.querySelector(".Wishlist-quantity");
+    if (!quantityElement) {
+        return
+    }
+    if (addquantityfromWishlist() > 0) {
+        quantityElement.style.display = "flex";
+        quantityElement.textContent = addquantityfromWishlist();
+        gsap.fromTo(
+            ".Wishlist-quantity",
+            { scale: 0 },
+            {
+                scale: 1,
+                duration: 0.4,
+                ease: "back.out(3)"
+            }
+        );
+
+    } else {
+        quantityElement.style.display = "none";
+    }
+}

@@ -1,11 +1,13 @@
 import { products } from "../product.js";
-import { wishListCart , deleteWishListItem , clearWishCart , removeQuanityFromWishList , plusQuanityFromWishList} from "./wishlistdata.js";
+import { wishListCart , deleteWishListItem , clearWishCart , removeQuanityFromWishList , plusQuanityFromWishList , displayQuantityWishlistItem} from "./wishlistdata.js";
 import { renderpaymentWishListItem } from "./wishlistpayment.js";
-import { showheaderOptionOnClick } from "../Cart.js";
+import { showheaderOptionOnClick , displayQuantity} from "../Cart.js";
 
 
 renderpaymentWishListItem();
 showheaderOptionOnClick()
+displayQuantity();
+displayQuantityWishlistItem();
 export function renderHtml() {
     let cartItemHtml = '';
 
@@ -111,6 +113,7 @@ export function renderHtml() {
             deleteWishListItem(itemID);
             renderHtml();
             renderpaymentWishListItem();
+            displayQuantityWishlistItem();
         })
     })
 
@@ -119,6 +122,7 @@ export function renderHtml() {
         clearWishCart();
         renderpaymentWishListItem();
         renderHtml();
+        displayQuantityWishlistItem();
         // renderTotalCartItem();
         // displayQuantity()
     })
@@ -130,8 +134,8 @@ export function renderHtml() {
             removeQuanityFromWishList(itemID)
             renderpaymentWishListItem();
             renderHtml();
-            // renderTotalCartItem();
-            // displayQuantity()
+            displayQuantityWishlistItem()
+         
         })
     })
     let plusBtn = document.querySelectorAll('.plus-btn')
@@ -142,8 +146,7 @@ export function renderHtml() {
             plusQuanityFromWishList(itemID)
             renderpaymentWishListItem();
             renderHtml();
-            // renderTotalCartItem();
-            // displayQuantity()
+            displayQuantityWishlistItem();
         })
     })
 

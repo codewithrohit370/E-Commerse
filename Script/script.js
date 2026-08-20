@@ -1,10 +1,11 @@
 import { products } from "./product.js";
 import { Cart, addquantity, displayQuantity, saveLocalStroge, showheaderOptionOnClick} from "./Cart.js";
-import { wishListCart , wishlistSaveItem} from "./WishList js/wishlistdata.js";
+import { wishListCart , wishlistSaveItem , displayQuantityWishlistItem} from "./WishList js/wishlistdata.js";
 gsap.registerPlugin(ScrollTrigger);
 
 
 showheaderOptionOnClick();
+displayQuantityWishlistItem();
 
 let hero = [{
     img: "images/hero-images.jpg",
