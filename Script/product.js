@@ -22,7 +22,7 @@ export const products = [
     image: "images/product-images/4.avif",
     name: "Volt Edge",
     priceCents: 649,
-    
+
   },
   {
     id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
@@ -35,28 +35,28 @@ export const products = [
     image: "images/product-images/6.avif",
     name: "Street Vibe Low",
     priceCents: 399,
-   
+
   },
   {
     id: "dd82ca78-a18b-4e2a-9250-31e67412f98d",
     image: "images/product-images/7.avif",
     name: "Nova Horizon",
     priceCents: 999,
-   
+
   },
   {
     id: "77919bbe-0e56-475b-adde-4f24dfed3a04",
     image: "images/product-images/8.avif",
     name: "Public React",
-    
+
     priceCents: 899,
-    
+
   },
   {
     id: "3fdfe8d6-9a15-4979-b459-585b0d0545b9",
     image: "images/product-images/9.avif",
     name: "Core Street Retro",
-   
+
     priceCents: 299,
   },
   {
