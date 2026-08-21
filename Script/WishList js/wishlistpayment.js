@@ -1,6 +1,6 @@
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { delveryOption } from "../delivery-option.js";
-import { wishListCart , addquantityfromWishlist} from "./wishlistdata.js";
+import { wishListCart, addquantityfromWishlist } from "./wishlistdata.js";
 import { products } from "../product.js";
 
 

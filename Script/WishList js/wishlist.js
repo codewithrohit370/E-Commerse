@@ -1,7 +1,7 @@
 import { products } from "../product.js";
-import { wishListCart , deleteWishListItem , clearWishCart , removeQuanityFromWishList , plusQuanityFromWishList , displayQuantityWishlistItem} from "./wishlistdata.js";
+import { wishListCart, deleteWishListItem, clearWishCart, removeQuanityFromWishList, plusQuanityFromWishList, displayQuantityWishlistItem } from "./wishlistdata.js";
 import { renderpaymentWishListItem } from "./wishlistpayment.js";
-import { showheaderOptionOnClick , displayQuantity} from "../Cart.js";
+import { showheaderOptionOnClick, displayQuantity } from "../Cart.js";
 
 
 renderpaymentWishListItem();
@@ -135,7 +135,7 @@ export function renderHtml() {
             renderpaymentWishListItem();
             renderHtml();
             displayQuantityWishlistItem()
-         
+
         })
     })
     let plusBtn = document.querySelectorAll('.plus-btn')
