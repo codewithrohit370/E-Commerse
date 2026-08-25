@@ -303,4 +303,36 @@ nav {
     }
 }
 
+@media (max-width:400px){
+    .first-section:first-child {
+    font-size: 20px;
+    }
+
+    .search-icon {
+        font-size: 13px;
+    }
+
+    .bar-icon{
+        font-size: 13px;
+    }
+
+    .heart-icon-1{
+        font-size: 13px;
+    }
+
+    .cart-icon{
+        font-size: 13px;
+    }
+
+    .Wishlist-quantity{
+        height: 18px;
+        width: 18px;
+    }
+    
+    .add-quantity{
+        height: 18px;
+        width: 18px;
+    }
+}
+
 

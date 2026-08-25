@@ -59,10 +59,29 @@
         padding: 110px 24px 0px;
     }
     .cheakout-hero p:nth-child(1){
-    font-size: 20px;
+        font-size: 20px;
     }
     .return-section a{
         font-size: 12px;
+    }
+}
+
+@media (max-width:400px){
+    .Cart-hero-section{
+        padding: 80px 25px 0px;
+        gap: 5px;
+    }
+
+    .cheakout-hero p:nth-child(1){
+        font-size: 16px;
+    }
+
+    .return-section a{
+        font-size: 12px;
+    }
+
+    .cheakout-hero{
+        margin-left: 5px;
     }
 }
 
