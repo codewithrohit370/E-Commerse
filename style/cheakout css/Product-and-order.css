@@ -320,3 +320,43 @@
         padding: 24px;
     }
 }
+
+@media (max-width:640px){
+    .product-heading{
+        padding: 4px 0px;
+    }
+
+    .Clear-btn{
+        padding: 0;
+    }
+
+    .img-box{
+        height: 90px;
+        width: 90px;
+    }
+
+    .item-infomation p:nth-child(1){
+        font-size: 14px;
+    }
+
+    .item-infomation p:nth-child(2){
+        font-size: 12px;
+    }
+
+    .quantity{
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .minus-btn{
+        font-size: 10px;
+    }
+
+    .plus-btn{
+        font-size: 10px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+}

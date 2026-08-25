@@ -60,3 +60,11 @@
         padding: 24px;
     }
 }
+
+
+@media (max-width:400px){
+    .discover-section p:nth-child(2){
+        font-size: 14px;
+    }
+}
+
