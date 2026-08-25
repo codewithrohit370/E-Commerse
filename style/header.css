@@ -88,6 +88,7 @@ nav {
     position: relative;
 }
 
+
 .cart a{
     color: black;
 }
@@ -294,6 +295,11 @@ nav {
     }
     .heart-icon-1{
         padding: 8px;
+    }
+
+    .Wishlist-quantity{
+        top: -5px;
+        right: -2px;
     }
 }
 
