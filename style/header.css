@@ -1,9 +1,12 @@
 header {
     box-shadow: 2px 0px 15px rgb(189, 189, 189);
-    width: 100%;
     padding: 16px 60px;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:auto;
+    box-sizing:border-box;
     z-index: 100;
     background-color: rgba(255, 255, 255, 1);
 }
