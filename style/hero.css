@@ -1,4 +1,4 @@
-.hero-section{
+.hero-section {
     padding: 0px 20px 20px 20px;
     margin-top: 100px;
     display: flex;
@@ -7,14 +7,15 @@
     position: relative;
 }
 
-.hero-img{
+.hero-img {
     width: 86%;
     height: 80vh;
     border-radius: 30px;
     object-position: center calc(50% - 100px);
     object-fit: cover;
 }
-.hero-heading{
+
+.hero-heading {
     position: absolute;
     font-size: 48px;
     color: #5B3A29;
@@ -22,16 +23,16 @@
     left: 240px;
 }
 
-.hero-para{
+.hero-para {
     position: absolute;
     font-size: 16px;
     font-weight: 300;
     width: 400px;
-    top:200px ;
+    top: 200px;
     left: 250px;
 }
 
-.btns button{
+.btns button {
     position: absolute;
     padding: 20px 30px;
     border-radius: 50%;
@@ -43,49 +44,53 @@
     cursor: pointer;
 }
 
-.backword-btn{
+.backword-btn {
     top: 220px;
     left: 76px;
 }
 
-.forward-btn{
+.forward-btn {
     top: 220px;
     right: 76px;
 }
 
 
-@media (max-width:1100px){
+@media (max-width:1100px) {
 
-    .hero-img{
-         object-fit: cover;
+    .hero-img {
+        object-fit: cover;
         object-position: bottom;
         height: 30vh;
         border-radius: 10px;
         width: 100%;
     }
-    .hero-heading{
+
+    .hero-heading {
         top: 55px;
         font-size: 20px;
         left: 60px;
     }
-    .hero-para{
+
+    .hero-para {
         font-size: 10px;
         top: 95px;
         left: 60px;
         width: 200px;
     }
 
-    .btns button{
+    .btns button {
         padding: 15px 20px;
         font-size: 10px;
     }
-    .forward-btn{
-        top:37%;
+
+    .forward-btn {
+        top: 37%;
         right: 0px;
     }
-    .backword-btn{
+
+    .backword-btn {
         top: 37%;
         left: 0px;
     }
 
-} 
+}
