@@ -2,16 +2,16 @@ header {
     box-shadow: 2px 0px 15px rgb(189, 189, 189);
     padding: 16px 60px;
     position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    width:auto;
-    box-sizing:border-box;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    box-sizing: border-box;
     z-index: 100;
     background-color: rgba(255, 255, 255, 1);
 }
 
-header nav a{
+header nav a {
     text-decoration: none;
 }
 
@@ -84,7 +84,7 @@ nav {
     align-items: center;
 }
 
-.third-section a{
+.third-section a {
     color: black;
 }
 
@@ -93,7 +93,7 @@ nav {
 }
 
 
-.cart a{
+.cart a {
     color: black;
 }
 
@@ -101,20 +101,20 @@ nav {
     display: none;
 }
 
-.heart-icon-1{
+.heart-icon-1 {
     font-size: 20px;
-    padding: 0  25px ;
+    padding: 0 25px;
     border-radius: 50%;
     transition: color 0.3s;
     cursor: pointer;
 }
 
-.heart-icon-1:hover{
+.heart-icon-1:hover {
     color: #ec9d14;
-    
+
 }
 
-.bar-icon{
+.bar-icon {
     font-size: 20px;
     padding: 8px;
     display: none;
@@ -147,7 +147,7 @@ nav {
     display: none;
 }
 
-.Wishlist-quantity{
+.Wishlist-quantity {
     position: absolute;
     top: -14px;
     right: 15px;
@@ -177,7 +177,7 @@ nav {
     padding: 7px 14px;
     color: #5a5a5a;
     font-weight: bolder;
-    transition: background-color 0.5s, border-radius 0.5s , color 0.5s;
+    transition: background-color 0.5s, border-radius 0.5s, color 0.5s;
 }
 
 .Btns button:first-child:hover {
@@ -218,30 +218,33 @@ nav {
     font-size: 14px;
     padding: 12px;
 }
+
 /* When i click bars */
 
-.btn-js{
+.btn-js {
     margin-top: 14px;
 }
-.btn-js p{
+
+.btn-js p {
     font-size: 14px;
     color: #5a5a5a;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.Btns-1{
+.Btns-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
 }
+
 .Btns-1 button:first-child {
     background: transparent;
     font-size: 14px;
     height: 40px;
-    width: 100%; 
+    width: 100%;
     color: #5a5a5a;
     border: 1px solid rgb(189, 189, 189);
     font-weight: bolder;
@@ -257,10 +260,10 @@ nav {
 }
 
 @media (max-width:1200px) {
-    header{
+    header {
         padding: 16px 30px;
     }
-    
+
 
     .third-section .search-icon {
         display: block;
@@ -269,74 +272,78 @@ nav {
     .second-section {
         display: none;
     }
-    .bar{
+
+    .bar {
         display: none;
     }
 }
 
 
 @media (max-width:760px) {
-    header{
+    header {
         padding: 16px 40px;
     }
+
     .first-section p:last-child {
         display: none;
     }
 }
 
-@media (max-width:640px){
-    header{
+@media (max-width:640px) {
+    header {
         padding: 16px 24px;
     }
-    .Btns{
+
+    .Btns {
         display: none;
     }
-    .third-section{
-        gap:10px;
+
+    .third-section {
+        gap: 10px;
     }
-    .bar-icon{
+
+    .bar-icon {
         display: block;
     }
-    .heart-icon-1{
+
+    .heart-icon-1 {
         padding: 8px;
     }
 
-    .Wishlist-quantity{
+    .Wishlist-quantity {
         top: -5px;
         right: -2px;
     }
 }
 
-@media (max-width:400px){
+@media (max-width:400px) {
     .first-section:first-child {
-    font-size: 20px;
+        font-size: 20px;
     }
 
     .search-icon {
         font-size: 13px;
     }
 
-    .bar-icon{
+    .bar-icon {
         font-size: 13px;
     }
 
-    .heart-icon-1{
+    .heart-icon-1 {
         font-size: 13px;
     }
 
-    .cart-icon{
+    .cart-icon {
         font-size: 13px;
     }
 
-    .Wishlist-quantity{
+    .Wishlist-quantity {
         height: 18px;
         width: 18px;
     }
-    
-    .add-quantity{
+
+    .add-quantity {
         height: 18px;
         width: 18px;
     }
 }
-
-
