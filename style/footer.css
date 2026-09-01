@@ -1,4 +1,4 @@
-.footer{
+.footer {
     padding: 70px 50px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
@@ -7,7 +7,8 @@
     row-gap: 30px;
     border-bottom: 1px solid rgb(207, 205, 205);
 }
-.contact-section{
+
+.contact-section {
     margin-right: 30px;
 }
 
@@ -19,44 +20,49 @@
 .contact-section span {
     color: #F6A61F;
 }
-.contact-section p:nth-child(2){
+
+.contact-section p:nth-child(2) {
     color: rgb(99, 99, 99);
     font-size: 16px;
     margin-top: 10px;
 }
 
-.contact-section p:nth-child(3){
+.contact-section p:nth-child(3) {
     display: flex;
     gap: 15px;
     color: gray;
     font-size: 15px;
     margin-top: 30px;
 }
-.contact-section p:nth-child(4){
+
+.contact-section p:nth-child(4) {
     display: flex;
     gap: 15px;
     color: gray;
     font-size: 15px;
     margin-top: 10px;
 }
-.contact-section p:nth-child(5){
+
+.contact-section p:nth-child(5) {
     display: flex;
     gap: 15px;
     color: gray;
     font-size: 15px;
     margin-top: 10px;
 }
-.icon{
+
+.icon {
     color: #F6A61F;
 }
 
-.icons{
+.icons {
     display: flex;
     gap: 15px;
     margin-top: 20px;
     margin-left: 30px;
 }
-.icon-1{
+
+.icon-1 {
     font-size: 18px;
     padding: 15px;
     background-color: rgb(240, 240, 240);
@@ -64,44 +70,46 @@
     transition: background-color 0.25s;
 }
 
-.icon-1:hover{
+.icon-1:hover {
     background-color: #F6A61F;
 }
 
 
-.row{
+.row {
     display: flex;
     flex-direction: column;
     gap: 15px;
     justify-content: center;
 }
-.row h4{
+
+.row h4 {
     font-size: 14px;
     font-weight: 700;
 }
 
-.row p{
+.row p {
     font-size: 14px;
     color: gray;
     transition: color 0.25s;
 }
-.row p:hover{
+
+.row p:hover {
     color: black;
 }
 
 
 @media (max-width:1024px) {
-    .footer{
-    padding: 70px 20px;
-    grid-template-columns: 1fr 1fr;
+    .footer {
+        padding: 70px 20px;
+        grid-template-columns: 1fr 1fr;
 
-}       
+    }
 }
 
 
-@media (max-width:749px){
-     .footer{
-    padding: 70px 20px;
-    grid-template-columns: 1fr;
-}
+@media (max-width:749px) {
+    .footer {
+        padding: 70px 20px;
+        grid-template-columns: 1fr;
+    }
 }
