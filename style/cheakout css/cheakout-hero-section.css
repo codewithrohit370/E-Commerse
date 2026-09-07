@@ -1,4 +1,4 @@
-.Cart-hero-section{
+.Cart-hero-section {
     padding: 110px 60px 20px 60px;
     display: flex;
     align-items: center;
@@ -6,20 +6,20 @@
     text-decoration: none;
 }
 
-.cheakout-hero p:nth-child(1){
+.cheakout-hero p:nth-child(1) {
     color: black;
     font-size: 30px;
     font-weight: 700;
 }
 
-.cheakout-hero p:nth-child(2){
+.cheakout-hero p:nth-child(2) {
     font-size: 16px;
     font-weight: 400;
     color: gray;
     margin-top: 10px;
 }
 
-.return-section a{
+.return-section a {
     color: gray;
     font-size: 14px;
     font-weight: 500;
@@ -30,17 +30,17 @@
     text-decoration: none;
     padding: 7px 20px;
     border-radius: 70px;
-    transition: background-color 0.25s ,color 0.25s;
+    transition: background-color 0.25s, color 0.25s;
 }
 
-.return-section a:hover{
+.return-section a:hover {
     background-color: rgba(255, 255, 0, 0.25);
     color: black;
 }
 
 
 @media (max-width:1200px) {
-    .Cart-hero-section{
+    .Cart-hero-section {
         padding: 100px 30px 0;
     }
 
@@ -48,40 +48,41 @@
 
 
 @media (max-width:760px) {
-    .Cart-hero-section{
+    .Cart-hero-section {
         padding: 100px 40px 0;
     }
 
 }
 
-@media (max-width:640px){
-    .Cart-hero-section{
+@media (max-width:640px) {
+    .Cart-hero-section {
         padding: 110px 24px 0px;
     }
-    .cheakout-hero p:nth-child(1){
+
+    .cheakout-hero p:nth-child(1) {
         font-size: 20px;
     }
-    .return-section a{
+
+    .return-section a {
         font-size: 12px;
     }
 }
 
-@media (max-width:400px){
-    .Cart-hero-section{
+@media (max-width:400px) {
+    .Cart-hero-section {
         padding: 90px 25px 0px;
         gap: 5px;
     }
 
-    .cheakout-hero p:nth-child(1){
+    .cheakout-hero p:nth-child(1) {
         font-size: 16px;
     }
 
-    .return-section a{
+    .return-section a {
         font-size: 12px;
     }
 
-    .cheakout-hero{
+    .cheakout-hero {
         margin-left: 5px;
     }
 }
-
