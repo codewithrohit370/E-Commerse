@@ -3,7 +3,7 @@ export let Cart = JSON.parse(localStorage.getItem('Cart')) || [];
 
 
 export function addquantity() {
-    let Totalcount = 0
+    let Totalcount = 0;
     Cart.forEach((item) => {
         Totalcount += item.quantity;
     })
