@@ -269,7 +269,6 @@ AddBtn.forEach((Button) => {
 
         count = 1
         saveLocalStroge();
-
         displayQuantity()
 
     })
