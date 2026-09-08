@@ -5,7 +5,7 @@ import { showheaderOptionOnClick, displayQuantity } from "../Cart.js";
 
 
 renderpaymentWishListItem();
-showheaderOptionOnClick()
+showheaderOptionOnClick();
 displayQuantity();
 displayQuantityWishlistItem();
 export function renderHtml() {
