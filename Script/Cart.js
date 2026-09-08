@@ -39,7 +39,7 @@ export function renderTotalCartItem() {
 }
 
 export function updateCart(productId) {
-    let newArr = []
+    let newArr = [];
     Cart.forEach((item) => {
         if (productId !== item.ProductId) {
             newArr.push(item)
